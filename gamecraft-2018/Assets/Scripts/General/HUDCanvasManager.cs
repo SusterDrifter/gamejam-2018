@@ -3,6 +3,46 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class HUDCanvasManager : MonoBehaviour {
+	static object _lock = new object();
+
+    private static HUDCanvasManager _hudCanvasManager;
+
+    public static HUDCanvasManager instance
+    {
+        get
+        {
+            if (_hudCanvasManager == null)
+            {
+                lock (_lock)
+                    if (_hudCanvasManager == null)
+                        _hudCanvasManager = new HUDCanvasManager();
+            }
+            return _hudCanvasManager;
+        }
+    }
+
+
+    private void Awake()
+    {
+        if (!_hudCanvasManager)
+        {
+            _hudCanvasManager = FindObjectOfType<HUDCanvasManager>();
+            if (_hudCanvasManager)
+            {
+                DontDestroyOnLoad(gameObject);
+            }
+        }
+        if (instance == null)
+        {
+            _hudCanvasManager = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            if (instance != this)
+                Destroy(gameObject);
+        }
+    }
 
 	// Use this for initialization
 	void Start () {
