@@ -5,10 +5,10 @@ public abstract class Task {
 	protected TaskSO taskSO;
 
 	[SerializeField]
-	private float timeRemaining = 5.0f;
+	protected float timeRemaining = 5.0f;
 
 	[SerializeField]
-	private float timeGiven = 5.0f;
+	protected float timeGiven = 5.0f;
 
     public virtual void InitTaskWithTaskSO(TaskSO so) {
 		taskSO = so;
