@@ -15,6 +15,7 @@ public class SignOffTaskSO : TaskSO {
     {
 		SignOffTask task = new SignOffTask();
         task.InitTaskWithTaskSO(this);
+		task.taskPanel = ShipPanel.Signature;
         return task;
     }
 

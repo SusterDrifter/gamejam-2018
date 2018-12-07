@@ -15,6 +15,7 @@ public class TemperatureTaskSO : TaskSO {
     {
 		TemperatureTask task = new TemperatureTask();
         task.InitTaskWithTaskSO(this);
+		task.taskPanel = ShipPanel.Thermostat;
         return task;
     }
 

@@ -14,6 +14,7 @@ public class ShootingTaskSO : TaskSO {
     {
 		ShootingTask task = new ShootingTask();
 		task.InitTaskWithTaskSO(this);
+		task.taskPanel = ShipPanel.Weapons;
 		return task;
     }
 

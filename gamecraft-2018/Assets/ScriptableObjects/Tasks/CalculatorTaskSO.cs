@@ -23,6 +23,7 @@ public class CalculatorTaskSO : TaskSO {
 			Random.Range(minTimeGiven, maxTimeGiven));
 		
 		task.InitTaskWithTaskSO(this);
+		task.taskPanel = ShipPanel.Calculator;
         
         return task;
     }

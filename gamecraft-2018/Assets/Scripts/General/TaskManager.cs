@@ -70,6 +70,7 @@ public class TaskManager : MonoBehaviour {
 		controller.taskNameText.text = so.taskName;
 		controller.timerSlider.maxValue = task.TimeGiven;
 		controller.timerSlider.value = task.TimeRemaining;
+		controller.SetupWithTask(task);
 		//controller.hotkeyText = "";
 
         return task;
@@ -94,7 +95,7 @@ public class TaskManager : MonoBehaviour {
 				break;
 			}
 
-			if (runningTime >= 1/stage.timeBetweenTaskAdd) {
+			if (runningTime >= stage.timeBetweenTaskAdd) {
 				AddTaskWithSO(getRandomTaskSO());
 				taskSpawnCount++;
 				runningTime = 0;
