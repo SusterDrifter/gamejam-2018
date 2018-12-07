@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(menuName = "Task ScriptableObjects/Calculator")]
 public class CalculatorTaskSO : TaskSO {
 
 	public override Task Create()
 	{
-		throw new System.NotImplementedException();
+		return new CalculatorTask();
 	}
 
 }

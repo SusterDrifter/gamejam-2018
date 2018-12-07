@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(menuName = "Task ScriptableObjects/Temperature")]
 public class TemperatureTaskSO : TaskSO {
 
     public override Task Create()
     {
-        throw new System.NotImplementedException();
+		return new TemperatureTask();
     }
 
 }
