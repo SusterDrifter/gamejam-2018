@@ -12,7 +12,9 @@ public class CalculatorTask : Task {
 
 	public string op = "";
 
-	public override void InitTaskWithTaskSO(TaskSO so) {
+    public bool Solved = false;
+
+    public override void InitTaskWithTaskSO(TaskSO so) {
 		base.InitTaskWithTaskSO(so);
 		this.timeRemaining = this.timeGiven;
 	}

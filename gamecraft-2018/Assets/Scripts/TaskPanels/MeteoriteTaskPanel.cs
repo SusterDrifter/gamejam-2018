@@ -5,8 +5,6 @@ using UnityEngine.UI;
 
 public class MeteoriteTaskPanel : TaskPanel {
 
-    public bool Solved = false;
-    public bool Charged = false;
 
     public Image TimerImage;
     public Button button;
@@ -36,7 +34,7 @@ public class MeteoriteTaskPanel : TaskPanel {
 	void Update () {
         if (task.TimeRemaining <= 0) MeteorImage.enabled = false;
 
-        if (!Solved) {
+        if (!task.Solved) {
             MeteorImage.transform.localScale = Vector3.one * (1 - task.TimeRemaining / task.TimeGiven) * maxScale;
 
             TimerImage.fillAmount = task.TimeRemaining / task.TimeGiven;
@@ -49,7 +47,7 @@ public class MeteoriteTaskPanel : TaskPanel {
                     } else {
                         StatusBar.fillAmount = task.timeCharged / task.totalChargableTime;
                     }
-                    Charged = true;
+                    task.Charged = true;
                     StatusBar.color = Color.yellow;
                 } else {
                     StatusBar.fillAmount = task.timeCharged / task.totalChargableTime;
@@ -63,11 +61,11 @@ public class MeteoriteTaskPanel : TaskPanel {
     }
 
     public void PressButton() {
-        if (!task.isCharging && !Solved) {
+        if (!task.isCharging && !task.Solved) {
             task.isCharging = true;
         }
-        if (Charged) {
-            Solved = true;
+        if (task.Charged) {
+            task.Solved = true;
             StatusBar.color = Color.green;
         }
     }

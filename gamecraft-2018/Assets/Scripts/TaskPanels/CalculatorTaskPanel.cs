@@ -7,8 +7,6 @@ public class CalculatorTaskPanel : TaskPanel {
     public const int ERASE = 10;
     public const int MAX_LENGTH = 4;
 
-    public bool Solved = false;
-
     public Image TimerImage;
     public Button[] Buttons;
     public Text QuestionText;
@@ -34,7 +32,7 @@ public class CalculatorTaskPanel : TaskPanel {
 	
 	// Update is called once per frame
 	void Update () {
-        if (!Solved) {
+        if (!task.Solved) {
             TimerImage.fillAmount = task.TimeRemaining / task.TimeGiven;
         }
     }
@@ -43,7 +41,7 @@ public class CalculatorTaskPanel : TaskPanel {
     }
 
     public void PressButton(int i) {
-        if (Solved) return;
+        if (task.Solved) return;
 
         if (i == ERASE) {
             if (AnswerText.text.Length == 0) return;
@@ -56,7 +54,7 @@ public class CalculatorTaskPanel : TaskPanel {
         AnswerText.text += i;
         if (int.Parse(AnswerText.text) == task.correctAnswer) {
             AnswerText.color = Color.green;
-            Solved = true;
+            task.Solved = true;
         }
     }
 }
