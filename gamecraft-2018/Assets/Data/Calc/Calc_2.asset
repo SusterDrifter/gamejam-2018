@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 375d7b3d9210849b185b323ff80312f2, type: 3}
   m_Name: Calc_2
   m_EditorClassIdentifier: 
-  taskName: 
+  taskName: Math
   scoreReward: 2
   maxTimeGiven: 11
   minTimeGiven: 8
