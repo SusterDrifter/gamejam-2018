@@ -20,7 +20,7 @@ public abstract class Task {
 		get { return taskSO; }
 	}
 
-	protected TaskCellController cellController;
+	public TaskCellController cellController;
 
 
     public virtual void InitTaskWithTaskSO(TaskSO so) {
@@ -33,6 +33,10 @@ public abstract class Task {
 
 	public virtual void Update() {
 		timeRemaining -= Time.deltaTime;
+		if (timeRemaining <= 0) {
+			OnTaskExpire();
+		}
+		UpdateCell();
 	}
 
 	public virtual void UpdateCell() {
@@ -42,8 +46,8 @@ public abstract class Task {
         }
 	}
 
-	public virtual void TaskExpire() {
-		
+	public virtual void OnTaskExpire() {
+		TaskManager.instance.RemoveTask(this);
 	}
 
 	public virtual void OnTaskFocused() {
