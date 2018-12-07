@@ -16,7 +16,7 @@ public class PanelController : MonoBehaviour {
     // Use this for initialization.
     void Start () {
         for (int i = 1; i < Panels.Count; i++) {
-            Panels[i].enabled = false;
+            Panels[i].gameObject.active = false;
         }
 	}
 	
@@ -29,7 +29,8 @@ public class PanelController : MonoBehaviour {
         // Ignore if no change
         if (currentTaskType == taskType && currentTask == task) return;
 
-        Panels[currentTaskType].enabled = false;
+        Panels[currentTaskType].gameObject.active = false;
+        Panels[taskType].gameObject.active = true;
         currentTaskType = taskType;
         currentTask = task;
     }
