@@ -68,6 +68,7 @@ public class TaskManager : MonoBehaviour {
     
 	IEnumerator _TaskAddCoroutine(StageSO stage)
     {
+		currentStage = stage;
 		float runningTime = 0;
 
 		while (true) {
