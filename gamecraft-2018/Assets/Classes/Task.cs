@@ -26,7 +26,11 @@ public abstract class Task {
 		
 	}
 
-	public virtual void TaskFocused() {
+	public virtual void OnTaskFocused() {
+		
+	}
+
+	public virtual void OnTaskUnfocused() {
 		
 	}
 
