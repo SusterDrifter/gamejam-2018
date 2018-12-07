@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HUDCanvasManager : MonoBehaviour {
 
@@ -24,7 +25,9 @@ public class HUDCanvasManager : MonoBehaviour {
     }
 	#endregion
 
-	public CanvasGroup TasksCanvasGroup; 
+	public CanvasGroup TasksCanvasGroup;
+
+	public Text TimeLeftText;
 
 	private void Awake()
     {

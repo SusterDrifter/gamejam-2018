@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour {
 	private float _timeRemaining;
 
 	[SerializeField]
-	float _startingTime;
+	float _startingTime = 60f;
 
 	[SerializeField]
 	private bool isPaused = true;
@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		_timeRemaining = _startingTime;
 	}
 	
 	// Update is called once per frame
@@ -80,6 +80,8 @@ public class GameManager : MonoBehaviour {
 			return;
 		
 		_timeRemaining -= Time.deltaTime;
+
+		HUDCanvasManager.instance.TimeLeftText.text = _timeRemaining.ToString("n0");
 	}
 
 	public List<TaskSO> GetCurrentStageTasks() {
