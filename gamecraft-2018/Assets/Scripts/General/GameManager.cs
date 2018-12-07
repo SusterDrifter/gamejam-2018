@@ -39,6 +39,9 @@ public class GameManager : MonoBehaviour {
 	[SerializeField]
 	float _startingTime;
 
+	[SerializeField]
+	private bool isPaused = true;
+
 	private void Awake()
     {
         if (!_gameManager)
@@ -61,15 +64,22 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-
 	// Use this for initialization
 	void Start () {
-		_timeRemaining -= Time.deltaTime;
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if (Input.GetKeyDown(KeyCode.Space))
+        {
+            StartGame();
+        }
+
+		if (isPaused)
+			return;
 		
+		_timeRemaining -= Time.deltaTime;
 	}
 
 	public List<TaskSO> GetCurrentStageTasks() {
@@ -77,6 +87,7 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void StartGame() {
+		isPaused = false;
 		TaskManager.instance.StartStage(stagesList[currentStageIndex]);
 	}
 
