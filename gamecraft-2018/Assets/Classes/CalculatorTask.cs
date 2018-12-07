@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class CalculatorTask : Task {
 
-    public string questionText = "What is 5 + 5?";
+	public string questionText = "What is \\n\\n{0} + {1}?";
     public int correctAnswer = 10;
+
+	public int operand1;
+	public int operand2;
+
+	public string op = "";
 
 	public override void InitTaskWithTaskSO(TaskSO so) {
 		base.InitTaskWithTaskSO(so);
@@ -17,11 +22,6 @@ public class CalculatorTask : Task {
         this.correctAnswer = correctAnswer;
         this.questionText = questionText;
     }
-
-	// Use this for initialization
-	void Start () {
-        // TODO
-	}
 	
 	// Update is called once per frame
 	public override void Update () {

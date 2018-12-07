@@ -139,7 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -242,7 +242,6 @@ MonoBehaviour:
   backgroundImage: {fileID: 114016443179082076}
   timerSlider: {fileID: 114118062742357656}
   taskNameText: {fileID: 114693147333825156}
-  hotkeyText: {fileID: 0}
 --- !u!114 &114485652136667030
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -283,7 +282,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
