@@ -61,13 +61,25 @@ public class TaskManager : MonoBehaviour {
 
 
 	public Task AddTaskWithSO(TaskSO so) {
+		if (ongoingTasks.Count >= maxTasks)
+			return null;
 		Task task = so.Create();
 		ongoingTasks.Add(task);
+		GameObject cell = Instantiate(taskCellPrefab, HUDCanvasManager.instance.TasksCanvasGroup.transform);
+		TaskCellController controller = cell.GetComponent<TaskCellController>();
+		task.cellController = controller;
+		controller.taskNameText.text = so.taskName;
+		controller.timerSlider.maxValue = task.TimeGiven;
+		controller.timerSlider.value = task.TimeRemaining;
+		//controller.hotkeyText = "";
+
         return task;
 	}
 
-	public void CompleteTask(Task task) {
+	public void RemoveTask(Task task) {
+		
 		ongoingTasks.Remove(task);
+		Destroy(task.cellController.gameObject);
 	}
     
 	IEnumerator _TaskAddCoroutine(StageSO stage)
@@ -89,6 +101,7 @@ public class TaskManager : MonoBehaviour {
     }
 
 	public void StartStage(StageSO stage) {
+		FlushTaskManager();
 		StartTaskAddCoroutine(stage);
 	}
 
@@ -97,9 +110,13 @@ public class TaskManager : MonoBehaviour {
 	}
 
 	public void FlushTaskManager() {
-		StopCoroutine(taskAddCoroutine);
+		if (taskAddCoroutine != null)
+		{
+			StopCoroutine(taskAddCoroutine);
+		}
 		taskAddCoroutine = null;
-        // maybe iterate through ongoingTasks to clear them up properly.
+		// maybe iterate through ongoingTasks to clear them up properly.
+		ongoingTasks.ForEach((Task obj) => Destroy(obj.cellController.gameObject));
 		ongoingTasks.Clear();
 	}
 
