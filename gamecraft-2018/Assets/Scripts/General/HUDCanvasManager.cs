@@ -35,6 +35,10 @@ public class HUDCanvasManager : MonoBehaviour {
 
 	public Text StageNumberText;
 
+	public CanvasGroup GameplayCanvasGroup;
+
+	public CanvasGroup MainMenuCanvasGroup;
+
 	private void Awake()
     {
         if (!_hudCanvasManager)
