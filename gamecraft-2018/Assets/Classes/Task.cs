@@ -10,6 +10,16 @@ public abstract class Task {
 	[SerializeField]
 	private float timeGiven;
 
+	public float TimeGiven {
+		get { return timeGiven; }
+	}
+    
+	public TaskSO TaskSO {
+		get { return taskSO; }
+	}
+
+	protected TaskCellController cellController;
+
 	public virtual void InitTaskWithTaskSO(TaskSO so) {
 		taskSO = so;
 	}
@@ -20,6 +30,13 @@ public abstract class Task {
 
 	public virtual void Update() {
 		timeRemaining -= Time.deltaTime;
+	}
+
+	public virtual void UpdateCell() {
+		if (cellController)
+        {
+            cellController.timerSlider.value = timeRemaining;
+        }
 	}
 
 	public virtual void TaskExpire() {
