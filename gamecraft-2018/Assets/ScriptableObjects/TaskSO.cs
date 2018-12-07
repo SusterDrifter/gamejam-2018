@@ -14,8 +14,12 @@ public abstract class TaskSO : ScriptableObject {
 
 	public abstract Task Create();
 
-	public virtual void OnTaskSuccess() {
+	public virtual void OnTaskSuccess(Task task) {
 		//default stuff
+	}
+
+	public virtual void OnTaskFailure(Task task) {
+		
 	}
 
 }
