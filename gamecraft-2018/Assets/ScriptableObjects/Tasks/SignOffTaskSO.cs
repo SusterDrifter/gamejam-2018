@@ -7,7 +7,9 @@ public class SignOffTaskSO : TaskSO {
 
     public override Task Create()
     {
-		return new SignOffTask();
+		SignOffTask task = new SignOffTask();
+        task.InitTaskWithTaskSO(this);
+        return task;
     }
 
 	public override void OnTaskSuccess(Task task)

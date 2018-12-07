@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour {
 	private List<StageSO> stagesList;
 
 	[SerializeField]
-	private float _timeRemaining;
+	public float _timeRemaining;
 
 	[SerializeField]
 	float _startingTime = 60f;

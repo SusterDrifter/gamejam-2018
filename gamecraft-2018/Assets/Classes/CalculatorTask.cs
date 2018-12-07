@@ -14,6 +14,7 @@ public class CalculatorTask : Task {
 
 	public override void InitTaskWithTaskSO(TaskSO so) {
 		base.InitTaskWithTaskSO(so);
+		this.timeRemaining = this.timeGiven;
 	}
 
     public CalculatorTask(int correctAnswer, string questionText, float timeGiven) {

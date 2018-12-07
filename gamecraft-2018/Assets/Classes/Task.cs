@@ -10,6 +10,9 @@ public abstract class Task {
 	[SerializeField]
     protected float timeGiven = 5.0f;
 
+	[SerializeField]
+	public int scoreReward = 1;
+
     public float TimeGiven {
 		get { return timeGiven; }
 	}
@@ -24,6 +27,8 @@ public abstract class Task {
 
     public virtual void InitTaskWithTaskSO(TaskSO so) {
 		taskSO = so;
+		scoreReward = so.scoreReward;
+		this.timeGiven = Random.Range(so.minTimeGiven, so.maxTimeGiven);
 	}
     
 	public virtual void Start() {

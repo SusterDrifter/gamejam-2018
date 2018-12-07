@@ -7,19 +7,24 @@ public abstract class TaskSO : ScriptableObject {
 	public string taskName;
 
 	[SerializeField]
-	protected float maxTimeGiven = 10f;
+    public int scoreReward;
 
 	[SerializeField]
-	protected float minTimeGiven = 3f;
+	public float maxTimeGiven = 10f;
+
+	[SerializeField]
+	public float minTimeGiven = 3f;
 
 	public abstract Task Create();
 
 	public virtual void OnTaskSuccess(Task task) {
-		//default stuff
+		GameManager.instance.currentScore += task.scoreReward;
+		TaskManager.instance.RemoveTask(task);
 	}
 
 	public virtual void OnTaskFailure(Task task) {
-		
+		GameManager.instance._timeRemaining += task.TimeGiven;
+		TaskManager.instance.RemoveTask(task);
 	}
 
 }

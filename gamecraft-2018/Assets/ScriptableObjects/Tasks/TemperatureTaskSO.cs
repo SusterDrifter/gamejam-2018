@@ -7,7 +7,9 @@ public class TemperatureTaskSO : TaskSO {
 
     public override Task Create()
     {
-		return new TemperatureTask();
+		TemperatureTask task = new TemperatureTask();
+        task.InitTaskWithTaskSO(this);
+        return task;
     }
 
 	public override void OnTaskSuccess(Task task)

@@ -17,10 +17,14 @@ public class CalculatorTaskSO : TaskSO {
         {
             GenerateQuestion();
         }
-        return new CalculatorTask(
-                correctAnswer,
-                questionText,
-                Random.Range(minTimeGiven, maxTimeGiven));
+		CalculatorTask task = new CalculatorTask(
+				correctAnswer,
+				questionText,
+			Random.Range(minTimeGiven, maxTimeGiven));
+		
+		task.InitTaskWithTaskSO(this);
+        
+        return task;
     }
 
     public override void OnTaskSuccess(Task task)

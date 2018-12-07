@@ -10,7 +10,9 @@ public class ShootingTaskSO : TaskSO {
 
     public override Task Create()
     {
-		return new ShootingTask();
+		ShootingTask task = new ShootingTask();
+		task.InitTaskWithTaskSO(this);
+		return task;
     }
 
 	public override void OnTaskSuccess(Task task)
