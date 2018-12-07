@@ -11,5 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 375d7b3d9210849b185b323ff80312f2, type: 3}
   m_Name: testcalc
   m_EditorClassIdentifier: 
+  taskName: calculator
   maxTimeGiven: 10
   minTimeGiven: 3
+  correctAnswer: -1000000
+  questionText: 
