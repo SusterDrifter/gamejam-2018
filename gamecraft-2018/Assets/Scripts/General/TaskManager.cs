@@ -56,6 +56,9 @@ public class TaskManager : MonoBehaviour {
 	[SerializeField]
 	private int maxTasks;
 
+	[SerializeField]
+	GameObject taskCellPrefab;
+
 	public void AddTaskWithSO(TaskSO so) {
 		Task task = so.Create();
 
