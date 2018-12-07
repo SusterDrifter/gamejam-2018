@@ -7,7 +7,7 @@ public class ShootingTask : Task {
 
 	public override void InitTaskWithTaskSO(TaskSO so)
     {
-        
+		base.InitTaskWithTaskSO(so);
     }
 
 	// Use this for initialization

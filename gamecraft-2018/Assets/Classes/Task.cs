@@ -2,13 +2,17 @@
 
 public abstract class Task {
 
+	protected TaskSO taskSO;
+
 	[SerializeField]
 	private float timeRemaining;
 
 	[SerializeField]
 	private float timeGiven;
 
-	public abstract void InitTaskWithTaskSO(TaskSO so);
+	public virtual void InitTaskWithTaskSO(TaskSO so) {
+		taskSO = so;
+	}
     
 	public virtual void Start() {
 		
