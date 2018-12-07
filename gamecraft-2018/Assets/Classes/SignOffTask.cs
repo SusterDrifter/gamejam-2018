@@ -4,9 +4,23 @@ using UnityEngine;
 
 public class SignOffTask : Task {
 
-	public override void InitTaskWithTaskSO(TaskSO so)
+    public bool Solved = false;
+
+    public bool Signed;
+    public float timeToApprove;
+    public float timeApprovedFor;
+    public bool isApproving;
+    public bool needsApproving;
+    public string todaysSignature;
+
+    public override void InitTaskWithTaskSO(TaskSO so)
     {
 		base.InitTaskWithTaskSO(so);
+        needsApproving = ((SignOffTaskSO)so).needApproval;
+        timeToApprove = Random.Range(((SignOffTaskSO)so).timeToApproveMin,
+                                     ((SignOffTaskSO)so).timeToApproveMax);
+        todaysSignature = TodaysSignature.GetInstance().signature;
+
     }
 
 	// Use this for initialization
@@ -15,7 +29,10 @@ public class SignOffTask : Task {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
+	public override void Update () {
+        if (isApproving) {
+            timeApprovedFor += Time.deltaTime;
+        }
+        base.Update();
 	}
 }
