@@ -8,14 +8,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af2882e4c2ca7477688025aaa9700f1f, type: 3}
-  m_Name: testtemp
+  m_Script: {fileID: 11500000, guid: 375d7b3d9210849b185b323ff80312f2, type: 3}
+  m_Name: testcalc
   m_EditorClassIdentifier: 
-  taskName: 
+  taskName: calculator
   scoreReward: 2
   maxTimeGiven: 10
   minTimeGiven: 3
-  RateOfChange: 5
-  StartingTemperature: 32.5
-  TargetMin: 40
-  TargetMax: 45
+  correctAnswer: 4
+  questionText: What is 2 + 2?
