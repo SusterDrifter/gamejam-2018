@@ -18,11 +18,13 @@ public abstract class TaskSO : ScriptableObject {
 	public abstract Task Create();
 
 	public virtual void OnTaskSuccess(Task task) {
+		Debug.Log("On Task Failure.");
 		GameManager.instance.currentScore += task.scoreReward;
 		TaskManager.instance.RemoveTask(task);
 	}
 
 	public virtual void OnTaskFailure(Task task) {
+		Debug.Log("On Task Failure.");
 		GameManager.instance.timeRemaining += task.TimeGiven;
 		TaskManager.instance.RemoveTask(task);
 	}

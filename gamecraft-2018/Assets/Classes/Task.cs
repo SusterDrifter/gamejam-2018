@@ -51,8 +51,12 @@ public abstract class Task {
         }
 	}
 
+	public virtual void OnTaskSuccess() {
+		taskSO.OnTaskSuccess(this);
+	}
+
 	public virtual void OnTaskExpire() {
-		TaskManager.instance.RemoveTask(this);
+		taskSO.OnTaskFailure(this);
 	}
 
 	public virtual void OnTaskFocused() {
