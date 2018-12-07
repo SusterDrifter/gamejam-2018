@@ -40,9 +40,9 @@ public class AirconTaskPanel : TaskPanel
             TimerImage.fillAmount = task.TimeRemaining / task.TimeGiven;
             TempBar.fillAmount = (task.CurrentTemp - MIN_TEMP) / 35;
             if (task.TargetMin <= task.CurrentTemp && task.CurrentTemp <= task.TargetMax) {
-                TempBar.color = Color.green;
+                TempBar.color = Color.white;
             } else {
-                TempBar.color = Color.red;
+                TempBar.color = new Vector4(0.9f,0.9f,0.9f,0.9f); 
             }
         }
     }
@@ -68,6 +68,7 @@ public class AirconTaskPanel : TaskPanel
     {
         if (task.TargetMin <= task.CurrentTemp && task.CurrentTemp <= task.TargetMax) {
             task.Solved = true;
+            task.OnTaskSuccess();
         }
     }
 }

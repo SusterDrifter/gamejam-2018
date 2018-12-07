@@ -623,26 +623,6 @@ Prefab:
       propertyPath: m_Name
       value: CanvasPrefab
       objectReference: {fileID: 0}
-    - target: {fileID: 224141938485510008, guid: 22d5dbd6ae59c4cd5b027669a0c78bee,
-        type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224850896262440254, guid: 22d5dbd6ae59c4cd5b027669a0c78bee,
-        type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224194085373557146, guid: 22d5dbd6ae59c4cd5b027669a0c78bee,
-        type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224031171352121812, guid: 22d5dbd6ae59c4cd5b027669a0c78bee,
-        type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22d5dbd6ae59c4cd5b027669a0c78bee, type: 2}
   m_IsPrefabAsset: 0
@@ -1706,6 +1686,7 @@ MonoBehaviour:
   TimeLeftText: {fileID: 90814534}
   ScoreText: {fileID: 846161396}
   endGameScreenController: {fileID: 0}
+  StageNumberText: {fileID: 0}
 --- !u!114 &1810232326
 MonoBehaviour:
   m_ObjectHideFlags: 0
