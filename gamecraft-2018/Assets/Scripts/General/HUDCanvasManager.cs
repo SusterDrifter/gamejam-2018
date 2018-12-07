@@ -29,6 +29,8 @@ public class HUDCanvasManager : MonoBehaviour {
 
 	public Text TimeLeftText;
 
+	public Text ScoreText;
+
 	private void Awake()
     {
         if (!_hudCanvasManager)

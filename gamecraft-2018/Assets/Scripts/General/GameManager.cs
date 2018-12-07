@@ -67,6 +67,7 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		_timeRemaining = _startingTime;
+		HUDCanvasManager.instance.ScoreText.text = currentScore.ToString();
 	}
 	
 	// Update is called once per frame
