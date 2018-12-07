@@ -7,10 +7,10 @@ public abstract class TaskSO : ScriptableObject {
 	public string taskName;
 
 	[SerializeField]
-	private float maxTimeGiven = 10f;
+	protected float maxTimeGiven = 10f;
 
 	[SerializeField]
-	private float minTimeGiven = 3f;
+	protected float minTimeGiven = 3f;
 
 	public abstract Task Create();
 
