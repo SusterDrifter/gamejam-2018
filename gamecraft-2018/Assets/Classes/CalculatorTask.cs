@@ -14,9 +14,17 @@ public class CalculatorTask : Task {
 
     public bool Solved = false;
 
+    public CalculatorTask() {
+
+    }
     public override void InitTaskWithTaskSO(TaskSO so) {
 		base.InitTaskWithTaskSO(so);
-		this.timeRemaining = this.timeGiven;
+        if (((CalculatorTaskSO)so).correctAnswer == CalculatorTaskSO.NO_ANSWER)
+        {
+            ((CalculatorTaskSO)so).GenerateQuestion(this);
+        }
+        this.timeGiven = Random.Range(so.minTimeGiven, so.maxTimeGiven);
+        this.timeRemaining = TimeGiven;
 	}
 
     public CalculatorTask(int correctAnswer, string questionText, float timeGiven) {
