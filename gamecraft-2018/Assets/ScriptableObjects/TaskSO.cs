@@ -18,7 +18,8 @@ public abstract class TaskSO : ScriptableObject {
 	public abstract Task Create();
 
 	public virtual void OnTaskSuccess(Task task) {
-		Debug.Log("On Task Failure.");
+		Debug.Log("On Task Success.");
+		GameManager.instance.timeRemaining += (task.TimeGiven / 3.0f);
 		GameManager.instance.currentScore++;
 		TaskManager.instance.RemoveTask(task);
 		GameManager.instance.GoToNextAvailableTask();
@@ -26,7 +27,6 @@ public abstract class TaskSO : ScriptableObject {
 
 	public virtual void OnTaskFailure(Task task) {
 		Debug.Log("On Task Failure.");
-		GameManager.instance.timeRemaining += task.TimeGiven;
 		TaskManager.instance.RemoveTask(task);
 	}
 
