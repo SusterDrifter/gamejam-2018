@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
+#region Singleton Pattern
 	static object _lock = new object();
 
     private static GameManager _gameManager;
@@ -21,9 +22,15 @@ public class GameManager : MonoBehaviour {
             return _gameManager;
         }
     }
-    
+	#endregion
 
-    private void Awake()
+	[SerializeField]
+	private float _timeRemaining;
+
+	[SerializeField]
+	float _startingTime;
+
+	private void Awake()
     {
         if (!_gameManager)
         {
@@ -48,7 +55,7 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		_timeRemaining -= Time.deltaTime;
 	}
 	
 	// Update is called once per frame
