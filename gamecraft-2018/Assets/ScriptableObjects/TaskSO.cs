@@ -23,7 +23,7 @@ public abstract class TaskSO : ScriptableObject {
 	}
 
 	public virtual void OnTaskFailure(Task task) {
-		GameManager.instance._timeRemaining += task.TimeGiven;
+		GameManager.instance.timeRemaining += task.TimeGiven;
 		TaskManager.instance.RemoveTask(task);
 	}
 

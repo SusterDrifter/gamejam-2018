@@ -28,13 +28,38 @@ public class GameManager : MonoBehaviour {
 
 	private int stageGap = 10;
 
-	public int currentScore = 0;
+	private int _currentScore;
+
+	public int currentScore {
+		get {
+			return _currentScore;
+		}
+		set {
+			_currentScore = value;
+			if (HUDCanvasManager.instance.ScoreText) {
+				HUDCanvasManager.instance.ScoreText.text = _currentScore.ToString();
+			}
+		}
+	}
 
 	[SerializeField]
 	private List<StageSO> stagesList;
 
 	[SerializeField]
-	public float _timeRemaining;
+	private float _timeRemaining;
+
+	[SerializeField]
+	public float timeRemaining {
+		get {
+			return _timeRemaining;
+		}
+		set {
+			_timeRemaining = value;
+			if (HUDCanvasManager.instance.TimeLeftText) {
+				HUDCanvasManager.instance.TimeLeftText.text = _timeRemaining.ToString("n0");
+			}
+		}
+	}
 
 	[SerializeField]
 	float _startingTime = 60f;
@@ -81,8 +106,6 @@ public class GameManager : MonoBehaviour {
 			return;
 		
 		_timeRemaining -= Time.deltaTime;
-
-		HUDCanvasManager.instance.TimeLeftText.text = _timeRemaining.ToString("n0");
 	}
 
 	public List<TaskSO> GetCurrentStageTasks() {
