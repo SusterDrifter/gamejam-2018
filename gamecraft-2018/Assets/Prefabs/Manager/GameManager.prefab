@@ -51,9 +51,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f5061b970ea441ac95c2cc05ac6a5db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentScore: 0
   stagesList:
   - {fileID: 11400000, guid: 550007b52de4342eb976edf43276c85a, type: 2}
   _timeRemaining: 0
-  _startingTime: 0
+  _startingTime: 40
   isPaused: 1
+  cameraController: {fileID: 0}

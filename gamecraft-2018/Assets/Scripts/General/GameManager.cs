@@ -149,6 +149,7 @@ public class GameManager : MonoBehaviour {
     
 	public void ShowEndGameScreen() {
 		HUDCanvasManager.instance.endGameScreenController.canvasGroup.gameObject.SetActive(true);
+		HUDCanvasManager.instance.endGameScreenController.canvasGroup.alpha = 0.0f;
 		HUDCanvasManager.instance.endGameScreenController.canvasGroup.DOFade(1.0f, 0.5f);
 		HUDCanvasManager.instance.endGameScreenController.EndGameScoreText.text = currentScore.ToString();
 	}
