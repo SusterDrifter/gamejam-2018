@@ -23,9 +23,9 @@ public class CalculatorTaskSO : TaskSO {
                 Random.Range(minTimeGiven, maxTimeGiven));
     }
 
-    public override void OnTaskSuccess()
+    public override void OnTaskSuccess(Task task)
     {
-        base.OnTaskSuccess();
+		base.OnTaskSuccess(task);
     }
 
 

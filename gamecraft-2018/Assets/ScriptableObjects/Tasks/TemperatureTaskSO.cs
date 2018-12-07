@@ -10,9 +10,9 @@ public class TemperatureTaskSO : TaskSO {
 		return new TemperatureTask();
     }
 
-	public override void OnTaskSuccess()
+	public override void OnTaskSuccess(Task task)
     {
-        base.OnTaskSuccess();
+		base.OnTaskSuccess(task);
     }
 
 }
