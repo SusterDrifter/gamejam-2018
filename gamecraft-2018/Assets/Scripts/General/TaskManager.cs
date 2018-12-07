@@ -82,7 +82,6 @@ public class TaskManager : MonoBehaviour {
 			yield return null;
 		}
 
-        yield return null;
     }
 
 	public void StartStage(StageSO stage) {

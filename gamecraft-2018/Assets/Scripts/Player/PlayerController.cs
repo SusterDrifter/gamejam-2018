@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
+	public CameraController cameraController;
+
+	private void Awake()
+	{
+		cameraController = Camera.main.GetComponent<CameraController>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 }
