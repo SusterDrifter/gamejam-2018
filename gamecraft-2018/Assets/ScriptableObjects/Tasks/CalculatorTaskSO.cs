@@ -46,6 +46,9 @@ public class CalculatorTaskSO : TaskSO {
             case 2:
             default:
                 correctAnswer = x - y;
+                if (x > y) {
+                    int temp = x; x = y; y = temp;
+                }
                 questionText = "What is " + x + " - " + y + "?";
                 break;
         }
