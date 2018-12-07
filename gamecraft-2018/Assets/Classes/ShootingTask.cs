@@ -7,13 +7,17 @@ public class ShootingTask : Task {
     public bool Destroyed;
     public float timeToCharge;
     public float timeCharged;
+    public float totalChargableTime;
+    public bool isCharging;
 
 	public override void InitTaskWithTaskSO(TaskSO so)
     {
 		base.InitTaskWithTaskSO(so);
         ShootingTaskSO stso = (ShootingTaskSO)so;
         timeToCharge = stso.timeToCharge;
-        timeCharged = 0;
+        totalChargableTime = stso.totalPossibleCharge;
+        timeCharged = 0f;
+        timeGiven = stso.maxTimeGiven;
     }
 
 	// Use this for initialization
@@ -22,8 +26,12 @@ public class ShootingTask : Task {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
+	public override void Update () {
+        if (isCharging) {
+            timeCharged += Time.deltaTime;
+        }
+
+        base.Update();
 	}
 
 }

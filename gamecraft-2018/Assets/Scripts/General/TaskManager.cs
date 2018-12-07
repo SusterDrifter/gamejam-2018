@@ -64,7 +64,8 @@ public class TaskManager : MonoBehaviour {
 		if (ongoingTasks.Count >= maxTasks)
 			return null;
 		Task task = so.Create();
-		ongoingTasks.Add(task);
+        task.InitTaskWithTaskSO(so);
+        ongoingTasks.Add(task);
 		GameObject cell = Instantiate(taskCellPrefab, HUDCanvasManager.instance.TasksCanvasGroup.transform);
 		TaskCellController controller = cell.GetComponent<TaskCellController>();
 		task.cellController = controller;

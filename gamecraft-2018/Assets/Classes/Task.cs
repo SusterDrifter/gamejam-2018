@@ -24,6 +24,8 @@ public abstract class Task {
 
     public virtual void InitTaskWithTaskSO(TaskSO so) {
 		taskSO = so;
+        timeGiven = so.maxTimeGiven;
+        timeRemaining = so.maxTimeGiven;
 	}
     
 	public virtual void Start() {

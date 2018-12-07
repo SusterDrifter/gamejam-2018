@@ -7,6 +7,8 @@ public class ShootingTaskSO : TaskSO {
 
     [SerializeField]
     public float timeToCharge = 5f;
+    [SerializeField]
+    public float totalPossibleCharge = 8f;
 
     public override Task Create()
     {
