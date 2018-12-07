@@ -55,14 +55,15 @@ public class TaskManager : MonoBehaviour {
 
 	[SerializeField]
 	private int maxTasks;
-
+    
 	[SerializeField]
 	GameObject taskCellPrefab;
 
-	public void AddTaskWithSO(TaskSO so) {
-		Task task = so.Create();
 
+	public Task AddTaskWithSO(TaskSO so) {
+		Task task = so.Create();
 		ongoingTasks.Add(task);
+        return task;
 	}
 
 	public void CompleteTask(Task task) {

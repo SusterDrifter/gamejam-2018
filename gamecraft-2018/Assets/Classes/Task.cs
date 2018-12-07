@@ -5,14 +5,16 @@ public abstract class Task {
 	protected TaskSO taskSO;
 
 	[SerializeField]
-	private float timeRemaining;
+	private float timeRemaining = 5.0f;
 
 	[SerializeField]
-	private float timeGiven;
+	private float timeGiven = 5.0f;
 
 	public float TimeGiven {
 		get { return timeGiven; }
 	}
+
+	public float TimeRemaining { get { return timeRemaining; } }
     
 	public TaskSO TaskSO {
 		get { return taskSO; }
@@ -20,7 +22,8 @@ public abstract class Task {
 
 	protected TaskCellController cellController;
 
-	public virtual void InitTaskWithTaskSO(TaskSO so) {
+
+    public virtual void InitTaskWithTaskSO(TaskSO so) {
 		taskSO = so;
 	}
     
@@ -58,4 +61,6 @@ public abstract class Task {
 
 		return true;
 	}
+
+    
 }

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -15,9 +15,13 @@ public class CalculatorTaskPanel : TaskPanel {
 
     public CalculatorTask task;
 
+    public TaskSO t;
+
 	// Use this for initialization
 	void Start () {
         GameManager.instance.StartGame();
+        task = (CalculatorTask)TaskManager.instance.AddTaskWithSO(t);
+
         for (int i = 0; i < Buttons.Length; i++) {
             int j = i;
             Button b = Buttons[i];
@@ -27,7 +31,7 @@ public class CalculatorTaskPanel : TaskPanel {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        TimerImage.fillAmount = task.TimeRemaining / task.TimeGiven;
 	}
     public override void Display() {
 
