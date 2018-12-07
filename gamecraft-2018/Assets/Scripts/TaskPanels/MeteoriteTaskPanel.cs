@@ -12,6 +12,9 @@ public class MeteoriteTaskPanel : TaskPanel {
     public Button button;
     public Image StatusBar;
     public Image StatusBarPartial;
+    public Image MeteorImage;
+
+    public float maxScale = 4.5f;
 
     public ShootingTask task;
 
@@ -31,8 +34,11 @@ public class MeteoriteTaskPanel : TaskPanel {
 	
 	// Update is called once per frame
 	void Update () {
-        if (!Solved)
-        {
+        if (task.TimeRemaining <= 0) MeteorImage.enabled = false;
+
+        if (!Solved) {
+            MeteorImage.transform.localScale = Vector3.one * (1 - task.TimeRemaining / task.TimeGiven) * maxScale;
+
             TimerImage.fillAmount = task.TimeRemaining / task.TimeGiven;
 
             if (task.isCharging) {
@@ -49,6 +55,10 @@ public class MeteoriteTaskPanel : TaskPanel {
                     StatusBar.fillAmount = task.timeCharged / task.totalChargableTime;
                 }
             } 
+
+        }
+        else {
+            MeteorImage.enabled = false;
         }
     }
 
