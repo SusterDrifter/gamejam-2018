@@ -15,9 +15,6 @@ public class TaskCellController : MonoBehaviour {
 	[SerializeField]
 	public Text taskNameText;
 
-	[SerializeField]
-	public Text hotkeyText;
-
 	public void SetupWithTask(Task task) {
 		timerSlider.maxValue = task.TimeGiven;
 		//backgroundImage.sprite = ;
