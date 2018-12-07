@@ -110,6 +110,10 @@ public class GameManager : MonoBehaviour {
 			return;
 		
 		_timeRemaining -= Time.deltaTime;
+
+		if (_timeRemaining <= 0) {
+			GameOver();
+		}
 	}
 
 	public List<TaskSO> GetCurrentStageTasks() {
@@ -128,7 +132,22 @@ public class GameManager : MonoBehaviour {
 	}
 
 	public void GameOver() {
-		
+		Debug.Log("GameOver called.");
+	}
+
+	public void GoToNextAvailableTask() {
+		List<Task> tasks = TaskManager.instance.ongoingTasks;
+
+		float min = float.MaxValue;
+		ShipPanel desired = ShipPanel.Default;
+        foreach (var item in tasks)
+		{
+			if (item.TimeRemaining < min) {
+				min = item.TimeRemaining;
+				desired = item.taskPanel;
+			}
+		}
+		cameraController.JumpToShipPanel(desired);
 	}
 
 }
