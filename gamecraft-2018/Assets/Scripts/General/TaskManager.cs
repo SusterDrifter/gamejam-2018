@@ -51,7 +51,7 @@ public class TaskManager : MonoBehaviour {
     }
 
 	[SerializeField]
-	private List<Task> ongoingTasks;
+	private List<Task> ongoingTasks = new List<Task>();
 
 	[SerializeField]
 	private int maxTasks;
@@ -82,7 +82,6 @@ public class TaskManager : MonoBehaviour {
 			yield return null;
 		}
 
-        yield return null;
     }
 
 	public void StartStage(StageSO stage) {
