@@ -67,6 +67,8 @@ public class GameManager : MonoBehaviour {
 	[SerializeField]
 	private bool isPaused = true;
 
+	CameraController cameraController;
+
 	private void Awake()
     {
         if (!_gameManager)
@@ -87,6 +89,8 @@ public class GameManager : MonoBehaviour {
             if (instance != this)
                 Destroy(gameObject);
         }
+
+		cameraController = Camera.main.GetComponent<CameraController>();
     }
 
 	// Use this for initialization
