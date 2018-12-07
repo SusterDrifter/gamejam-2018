@@ -5,6 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Stage")]
 public class StageSO : ScriptableObject {
 
-	List<TaskSO> tasks;
+	public float timeBetweenTaskAdd;
+
+	public List<TaskSO> tasks;
 
 }
