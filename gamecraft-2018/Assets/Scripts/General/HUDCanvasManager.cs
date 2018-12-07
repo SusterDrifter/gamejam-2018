@@ -33,6 +33,8 @@ public class HUDCanvasManager : MonoBehaviour {
 
 	public EndGameScreenController endGameScreenController;
 
+	public Text StageNumberText;
+
 	private void Awake()
     {
         if (!_hudCanvasManager)

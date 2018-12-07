@@ -129,6 +129,7 @@ public class GameManager : MonoBehaviour {
 	public void NextStage() {
 		TaskManager.instance.FlushTaskManager();
 		currentStageIndex++;
+		HUDCanvasManager.instance.StageNumberText.text = (currentStageIndex + 1).ToString();
         // maybe start
 	}
 

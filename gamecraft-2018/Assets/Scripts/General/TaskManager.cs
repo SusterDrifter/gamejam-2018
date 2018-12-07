@@ -85,18 +85,29 @@ public class TaskManager : MonoBehaviour {
     {
 		currentStage = stage;
 		float runningTime = 0;
+		int taskSpawnCount = 0;
 
 		while (true) {
 			runningTime += Time.deltaTime;
 
-			if (runningTime >= 1/stage.timeBetweenTaskAdd) {
-				AddTaskWithSO(getRandomTaskSO());
-				runningTime = 0;
+			if (taskSpawnCount >= stage.numOfTasks) {
+				break;
 			}
 
+			if (runningTime >= 1/stage.timeBetweenTaskAdd) {
+				AddTaskWithSO(getRandomTaskSO());
+				taskSpawnCount++;
+				runningTime = 0;
+			}
+        
 			yield return null;
 		}
 
+		while (TaskManager.instance.ongoingTasks.Count > 0) {
+			yield return null;
+		}
+
+		GameManager.instance.NextStage();
     }
 
 	public void StartStage(StageSO stage) {
