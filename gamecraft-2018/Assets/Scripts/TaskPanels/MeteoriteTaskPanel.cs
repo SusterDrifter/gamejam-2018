@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class MeteoriteTaskPanel : TaskPanel {
 
-    public bool Charged = false;
 
     public Image TimerImage;
     public Button button;
@@ -48,7 +47,7 @@ public class MeteoriteTaskPanel : TaskPanel {
                     } else {
                         StatusBar.fillAmount = task.timeCharged / task.totalChargableTime;
                     }
-                    Charged = true;
+                    task.Charged = true;
                     StatusBar.color = Color.yellow;
                 } else {
                     StatusBar.fillAmount = task.timeCharged / task.totalChargableTime;
@@ -65,7 +64,7 @@ public class MeteoriteTaskPanel : TaskPanel {
         if (!task.isCharging && !task.Solved) {
             task.isCharging = true;
         }
-        if (Charged) {
+        if (task.Charged) {
             task.Solved = true;
             StatusBar.color = Color.green;
         }

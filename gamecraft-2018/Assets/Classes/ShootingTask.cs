@@ -5,6 +5,7 @@ using UnityEngine;
 public class ShootingTask : Task {
 
     public bool Solved = false;
+    public bool Charged = false;
 
     public bool Destroyed;
     public float timeToCharge;
