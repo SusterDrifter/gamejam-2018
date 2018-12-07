@@ -8,7 +8,7 @@ public abstract class Task {
 	[SerializeField]
 	private float timeGiven;
 
-	public abstract Task InitTaskWithTaskSO(TaskSO so);
+	public abstract void InitTaskWithTaskSO(TaskSO so);
 
 	public void Update() {
 		timeRemaining += Time.deltaTime;
