@@ -7,6 +7,7 @@ public class CalculatorTaskPanel : TaskPanel {
     public const int ERASE = 10;
     public const int MAX_LENGTH = 4;
 
+    public bool Solved = false;
 
     public Image TimerImage;
     public Button[] Buttons;
@@ -22,6 +23,8 @@ public class CalculatorTaskPanel : TaskPanel {
         GameManager.instance.StartGame();
         task = (CalculatorTask)TaskManager.instance.AddTaskWithSO(t);
 
+        QuestionText.text = task.questionText;
+
         for (int i = 0; i < Buttons.Length; i++) {
             int j = i;
             Button b = Buttons[i];
@@ -31,13 +34,17 @@ public class CalculatorTaskPanel : TaskPanel {
 	
 	// Update is called once per frame
 	void Update () {
-        TimerImage.fillAmount = task.TimeRemaining / task.TimeGiven;
-	}
+        if (!Solved) {
+            TimerImage.fillAmount = task.TimeRemaining / task.TimeGiven;
+        }
+    }
     public override void Display() {
 
     }
 
     public void PressButton(int i) {
+        if (Solved) return;
+
         if (i == ERASE) {
             if (AnswerText.text.Length == 0) return;
             AnswerText.text = AnswerText.text.Substring(0, AnswerText.text.Length - 1);
@@ -47,5 +54,9 @@ public class CalculatorTaskPanel : TaskPanel {
         if (AnswerText.text.Length == MAX_LENGTH) return;
 
         AnswerText.text += i;
+        if (int.Parse(AnswerText.text) == task.correctAnswer) {
+            AnswerText.color = Color.green;
+            Solved = true;
+        }
     }
 }
