@@ -17,6 +17,7 @@ public class CalculatorTaskPanel : TaskPanel {
 
 	// Use this for initialization
 	void Start () {
+        GameManager.instance.StartGame();
         for (int i = 0; i < Buttons.Length; i++) {
             int j = i;
             Button b = Buttons[i];
