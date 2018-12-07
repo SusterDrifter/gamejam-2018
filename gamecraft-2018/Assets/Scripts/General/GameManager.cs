@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class GameManager : MonoBehaviour {
 
@@ -76,13 +77,13 @@ public class GameManager : MonoBehaviour {
             _gameManager = FindObjectOfType<GameManager>();
             if (_gameManager)
             {
-                DontDestroyOnLoad(gameObject);
+                //DontDestroyOnLoad(gameObject);
             }
         }
         if (instance == null)
         {
             _gameManager = this;
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -133,6 +134,14 @@ public class GameManager : MonoBehaviour {
 
 	public void GameOver() {
 		Debug.Log("GameOver called.");
+		isPaused = true;
+		Invoke("ShowEndGameScreen", 1.5f);
+	}
+    
+	public void ShowEndGameScreen() {
+		HUDCanvasManager.instance.endGameScreenController.canvasGroup.gameObject.SetActive(true);
+		HUDCanvasManager.instance.endGameScreenController.canvasGroup.DOFade(1.0f, 0.5f);
+		HUDCanvasManager.instance.endGameScreenController.EndGameScoreText.text = currentScore.ToString();
 	}
 
 	public void GoToNextAvailableTask() {
@@ -148,6 +157,10 @@ public class GameManager : MonoBehaviour {
 			}
 		}
 		cameraController.JumpToShipPanel(desired);
+	}
+
+	public void ToMainMenu() {
+		UnityEngine.SceneManagement.SceneManager.LoadScene("MainGame");
 	}
 
 }

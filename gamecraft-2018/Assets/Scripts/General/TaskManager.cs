@@ -35,13 +35,13 @@ public class TaskManager : MonoBehaviour {
             _taskManager = FindObjectOfType<TaskManager>();
             if (_taskManager)
             {
-                DontDestroyOnLoad(gameObject);
+                //DontDestroyOnLoad(gameObject);
             }
         }
         if (instance == null)
         {
             _taskManager = this;
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
         }
         else
         {

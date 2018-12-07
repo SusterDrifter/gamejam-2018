@@ -31,6 +31,8 @@ public class HUDCanvasManager : MonoBehaviour {
 
 	public Text ScoreText;
 
+	public EndGameScreenController endGameScreenController;
+
 	private void Awake()
     {
         if (!_hudCanvasManager)
@@ -38,13 +40,13 @@ public class HUDCanvasManager : MonoBehaviour {
             _hudCanvasManager = FindObjectOfType<HUDCanvasManager>();
             if (_hudCanvasManager)
             {
-                DontDestroyOnLoad(gameObject);
+                //DontDestroyOnLoad(gameObject);
             }
         }
         if (instance == null)
         {
             _hudCanvasManager = this;
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
         }
         else
         {

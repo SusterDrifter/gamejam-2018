@@ -19,7 +19,7 @@ public abstract class TaskSO : ScriptableObject {
 
 	public virtual void OnTaskSuccess(Task task) {
 		Debug.Log("On Task Failure.");
-		GameManager.instance.currentScore += task.scoreReward;
+		GameManager.instance.currentScore++;
 		TaskManager.instance.RemoveTask(task);
 		GameManager.instance.GoToNextAvailableTask();
 	}
