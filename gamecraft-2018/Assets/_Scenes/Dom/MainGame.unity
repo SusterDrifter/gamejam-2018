@@ -173,12 +173,12 @@ Prefab:
     - target: {fileID: 224234781244306906, guid: 8ff45bf11fec44c5289b9fef765e12f1,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 75
+      value: 175
       objectReference: {fileID: 0}
     - target: {fileID: 224234781244306906, guid: 8ff45bf11fec44c5289b9fef765e12f1,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 100
+      value: 243.17
       objectReference: {fileID: 0}
     - target: {fileID: 224234781244306906, guid: 8ff45bf11fec44c5289b9fef765e12f1,
         type: 2}
@@ -220,26 +220,6 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114242468099398426, guid: 8ff45bf11fec44c5289b9fef765e12f1,
-        type: 2}
-      propertyPath: backgroundImage
-      value: 
-      objectReference: {fileID: 958771149}
-    - target: {fileID: 114242468099398426, guid: 8ff45bf11fec44c5289b9fef765e12f1,
-        type: 2}
-      propertyPath: taskNameText
-      value: 
-      objectReference: {fileID: 1669241429}
-    - target: {fileID: 114242468099398426, guid: 8ff45bf11fec44c5289b9fef765e12f1,
-        type: 2}
-      propertyPath: timerSlider
-      value: 
-      objectReference: {fileID: 1112603171}
-    - target: {fileID: 114242468099398426, guid: 8ff45bf11fec44c5289b9fef765e12f1,
-        type: 2}
-      propertyPath: hotkeyText
-      value: 
-      objectReference: {fileID: 270455070}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ff45bf11fec44c5289b9fef765e12f1, type: 2}
   m_IsPrefabAsset: 0
@@ -271,9 +251,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentScore: 0
-  stagesList: []
+  stagesList:
+  - {fileID: 11400000, guid: 550007b52de4342eb976edf43276c85a, type: 2}
   _timeRemaining: 0
   _startingTime: 0
+  isPaused: 1
 --- !u!4 &243891701
 Transform:
   m_ObjectHideFlags: 0
@@ -287,12 +269,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &270455070 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114419667855860010, guid: 8ff45bf11fec44c5289b9fef765e12f1,
-    type: 2}
-  m_PrefabInternal: {fileID: 217925466}
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &437341106
 GameObject:
   m_ObjectHideFlags: 0
@@ -326,7 +302,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.0835413, y: 0}
   m_AnchorMax: {x: 0.9164587, y: 0.22500001}
-  m_AnchoredPosition: {x: -0.000015258789, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0.5}
   m_SizeDelta: {x: 1.7000122, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &437341108
@@ -346,8 +322,8 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 0
-  m_Spacing: 0
-  m_ChildForceExpandWidth: 1
+  m_Spacing: 15
+  m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
@@ -451,8 +427,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f834a5a6efda4ae887df0fc796bb3d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTasks: 0
-  taskCellPrefab: {fileID: 0}
+  maxTasks: 10
+  taskCellPrefab: {fileID: 1953651126168868, guid: 8ff45bf11fec44c5289b9fef765e12f1,
+    type: 2}
 --- !u!4 &537945949
 Transform:
   m_ObjectHideFlags: 0
@@ -466,18 +443,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &958771149 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114016443179082076, guid: 8ff45bf11fec44c5289b9fef765e12f1,
-    type: 2}
-  m_PrefabInternal: {fileID: 217925466}
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
---- !u!114 &1112603171 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114118062742357656, guid: 8ff45bf11fec44c5289b9fef765e12f1,
-    type: 2}
-  m_PrefabInternal: {fileID: 217925466}
-  m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1475613043
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,12 +532,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f0e4691761d0423da4043ce7993a4b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1669241429 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114693147333825156, guid: 8ff45bf11fec44c5289b9fef765e12f1,
-    type: 2}
-  m_PrefabInternal: {fileID: 217925466}
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1835206935
 GameObject:
   m_ObjectHideFlags: 0
@@ -644,6 +603,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bd98c6fa0d2437a9cbe3d780f3aa7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TasksCanvasGroup: {fileID: 437341109}
 --- !u!114 &2077747249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -671,10 +631,10 @@ MonoBehaviour:
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
