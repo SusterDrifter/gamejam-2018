@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class HUDCanvasManager : MonoBehaviour {
+
+	#region Singleton
 	static object _lock = new object();
 
     private static HUDCanvasManager _hudCanvasManager;
@@ -20,9 +22,11 @@ public class HUDCanvasManager : MonoBehaviour {
             return _hudCanvasManager;
         }
     }
+	#endregion
 
+	public CanvasGroup TasksCanvasGroup; 
 
-    private void Awake()
+	private void Awake()
     {
         if (!_hudCanvasManager)
         {
