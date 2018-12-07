@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 
-public abstract class Task {
+[System.Serializable]
+public class Task {
+
+	public ShipPanel taskPanel;
 
 	protected TaskSO taskSO;
 
@@ -52,11 +55,13 @@ public abstract class Task {
 	}
 
 	public virtual void OnTaskSuccess() {
-		taskSO.OnTaskSuccess(this);
+		if (taskSO)
+		    taskSO.OnTaskSuccess(this);
 	}
 
 	public virtual void OnTaskExpire() {
-		taskSO.OnTaskFailure(this);
+		if (taskSO)
+		    taskSO.OnTaskFailure(this);
 	}
 
 	public virtual void OnTaskFocused() {

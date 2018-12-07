@@ -67,7 +67,7 @@ public class GameManager : MonoBehaviour {
 	[SerializeField]
 	private bool isPaused = true;
 
-	CameraController cameraController;
+	public CameraController cameraController;
 
 	private void Awake()
     {

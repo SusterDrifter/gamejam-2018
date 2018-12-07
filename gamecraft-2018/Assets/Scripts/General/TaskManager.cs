@@ -49,16 +49,14 @@ public class TaskManager : MonoBehaviour {
                 Destroy(gameObject);
         }
     }
-
-	[SerializeField]
-	private List<Task> ongoingTasks = new List<Task>();
+    
+	public List<Task> ongoingTasks;
 
 	[SerializeField]
 	private int maxTasks;
     
 	[SerializeField]
 	GameObject taskCellPrefab;
-
 
 	public Task AddTaskWithSO(TaskSO so) {
 		if (ongoingTasks.Count >= maxTasks)
