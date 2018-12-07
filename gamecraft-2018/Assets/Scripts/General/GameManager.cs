@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour {
 
 	private int stageGap = 10;
 
+	public int currentScore = 0;
+
 	[SerializeField]
 	private List<StageSO> stagesList;
 
