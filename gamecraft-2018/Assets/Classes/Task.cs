@@ -29,6 +29,7 @@ public abstract class Task {
 		taskSO = so;
 		scoreReward = so.scoreReward;
 		this.timeGiven = Random.Range(so.minTimeGiven, so.maxTimeGiven);
+		timeRemaining = TimeGiven;
 	}
     
 	public virtual void Start() {
