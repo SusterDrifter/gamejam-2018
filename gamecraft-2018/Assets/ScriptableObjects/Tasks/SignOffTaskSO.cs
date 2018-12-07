@@ -10,4 +10,9 @@ public class SignOffTaskSO : TaskSO {
 		return new SignOffTask();
     }
 
+	public override void OnTaskSuccess()
+    {
+        base.OnTaskSuccess();
+    }
+
 }

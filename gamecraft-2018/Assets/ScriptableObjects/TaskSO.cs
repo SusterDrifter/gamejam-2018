@@ -4,6 +4,8 @@ using UnityEngine;
 
 public abstract class TaskSO : ScriptableObject {
 
+	public string taskName;
+
 	[SerializeField]
 	private float maxTimeGiven = 10f;
 
@@ -11,5 +13,9 @@ public abstract class TaskSO : ScriptableObject {
 	private float minTimeGiven = 3f;
 
 	public abstract Task Create();
+
+	public virtual void OnTaskSuccess() {
+		//default stuff
+	}
 
 }

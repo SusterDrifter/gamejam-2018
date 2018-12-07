@@ -10,4 +10,8 @@ public class ShootingTaskSO : TaskSO {
 		return new ShootingTask();
     }
 
+	public override void OnTaskSuccess()
+    {
+        base.OnTaskSuccess();
+    }
 }

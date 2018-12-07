@@ -10,4 +10,9 @@ public class CalculatorTaskSO : TaskSO {
 		return new CalculatorTask();
 	}
 
+	public override void OnTaskSuccess()
+	{
+		base.OnTaskSuccess();
+	}
+
 }
