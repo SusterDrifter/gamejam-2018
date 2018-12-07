@@ -37,16 +37,20 @@ public class CalculatorTaskSO : TaskSO {
         switch (rand) {
             case 0:
                 correctAnswer = x + y;
-                questionText = "What is \\n\\n" + x + " + " + y + "?";
+                questionText = "What is " + x + " + " + y + "?";
                 break;
             case 1:
                 correctAnswer = x * y;
-                questionText = "What is \\n\\n" + x + " * " + y + "?";
+                questionText = "What is " + x + " * " + y + "?";
                 break;
             case 2:
             default:
+
+                if (x > y) {
+                    int temp = x; x = y; y = temp;
+                }
                 correctAnswer = x - y;
-                questionText = "What is \\n\\n" + x + " - " + y + "?";
+                questionText = "What is " + x + " - " + y + "?";
                 break;
         }
     }
