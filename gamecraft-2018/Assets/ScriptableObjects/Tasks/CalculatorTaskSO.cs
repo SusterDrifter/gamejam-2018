@@ -45,10 +45,11 @@ public class CalculatorTaskSO : TaskSO {
                 break;
             case 2:
             default:
-                correctAnswer = x - y;
+
                 if (x > y) {
                     int temp = x; x = y; y = temp;
                 }
+                correctAnswer = x - y;
                 questionText = "What is " + x + " - " + y + "?";
                 break;
         }
