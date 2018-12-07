@@ -24,6 +24,13 @@ public class GameManager : MonoBehaviour {
     }
 	#endregion
 
+	private int currentStageIndex = 0;
+
+	private int stageGap = 10;
+
+	[SerializeField]
+	private List<StageSO> stagesList;
+
 	[SerializeField]
 	private float _timeRemaining;
 
@@ -62,4 +69,23 @@ public class GameManager : MonoBehaviour {
 	void Update () {
 		
 	}
+
+	public List<TaskSO> GetCurrentStageTasks() {
+		return new List<TaskSO>();
+	}
+
+	public void StartGame() {
+		TaskManager.instance.StartStage(stagesList[currentStageIndex]);
+	}
+
+	public void NextStage() {
+		TaskManager.instance.FlushTaskManager();
+		currentStageIndex++;
+        // maybe start
+	}
+
+	public void GameOver() {
+		
+	}
+
 }
