@@ -50,7 +50,7 @@ public class TaskManager : MonoBehaviour {
         }
     }
     
-	public List<Task> ongoingTasks;
+	public List<Task> ongoingTasks = new List<Task>();
 
 	[SerializeField]
 	private int maxTasks;
@@ -115,7 +115,10 @@ public class TaskManager : MonoBehaviour {
 		}
 		taskAddCoroutine = null;
 		// maybe iterate through ongoingTasks to clear them up properly.
-		ongoingTasks.ForEach((Task obj) => Destroy(obj.cellController.gameObject));
+		ongoingTasks.ForEach((Task obj) => { if (obj.cellController) { 
+				Destroy(obj.cellController.gameObject); 
+			} 
+		});
 		ongoingTasks.Clear();
 	}
 

@@ -96,7 +96,7 @@ public class GameManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		_timeRemaining = _startingTime;
+		timeRemaining = _startingTime;
 		HUDCanvasManager.instance.ScoreText.text = currentScore.ToString();
 	}
 	
@@ -110,7 +110,7 @@ public class GameManager : MonoBehaviour {
 		if (isPaused)
 			return;
 		
-		_timeRemaining -= Time.deltaTime;
+		timeRemaining -= Time.deltaTime;
 
 		if (_timeRemaining <= 0) {
 			GameOver();
