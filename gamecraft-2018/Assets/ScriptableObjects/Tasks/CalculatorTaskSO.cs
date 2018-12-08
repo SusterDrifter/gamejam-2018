@@ -42,8 +42,7 @@ public class CalculatorTaskSO : TaskSO {
                 break;
             case 2:
             default:
-
-                if (x > y) {
+                if (x < y) {
                     int temp = x; x = y; y = temp;
                 }
                 correctAnswer = x - y;
