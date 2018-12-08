@@ -13,7 +13,10 @@ public class CalculatorTaskSO : TaskSO {
 
 	public override Task Create()
     {
-        return new CalculatorTask();
+        CalculatorTask task = new CalculatorTask();
+        task.InitTaskWithTaskSO(this);
+        task.taskPanel = ShipPanel.Calculator;
+        return task;
     }
 
     public override void OnTaskSuccess(Task task)

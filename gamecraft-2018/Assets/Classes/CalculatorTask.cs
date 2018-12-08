@@ -19,10 +19,7 @@ public class CalculatorTask : Task {
     }
     public override void InitTaskWithTaskSO(TaskSO so) {
 		base.InitTaskWithTaskSO(so);
-        if (((CalculatorTaskSO)so).correctAnswer == CalculatorTaskSO.NO_ANSWER)
-        {
-            ((CalculatorTaskSO)so).GenerateQuestion(this);
-        }
+        ((CalculatorTaskSO)so).GenerateQuestion(this);
         this.timeGiven = Random.Range(so.minTimeGiven, so.maxTimeGiven);
         this.timeRemaining = TimeGiven;
         taskPanel = ShipPanel.Calculator;
