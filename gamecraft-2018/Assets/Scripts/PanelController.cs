@@ -26,6 +26,8 @@ public class PanelController : MonoBehaviour {
 
     // Switch the displayed task to the specified task in the next frame.
     public void SwitchTask(int newTaskType, Task task) {
+        // Ignore if no change
+        if (currentTask == task) return;
 
         for (int i = 0; i < Panels.Count; i++)
         {
@@ -43,8 +45,6 @@ public class PanelController : MonoBehaviour {
             return; 
         }
 
-        // Ignore if no change
-        if (currentTask == task) return;
 		currentTask = task;
         Panels[newTaskType].gameObject.SetActive(true);
         Panels[newTaskType].Start();
