@@ -2019,7 +2019,7 @@ Prefab:
     - target: {fileID: 20123018514402834, guid: ca86dcf38841d4033b03cbfb0f627a62,
         type: 2}
       propertyPath: orthographic size
-      value: 3.98
+      value: 6.78
       objectReference: {fileID: 0}
     - target: {fileID: 114247247138378450, guid: ca86dcf38841d4033b03cbfb0f627a62,
         type: 2}
@@ -2032,11 +2032,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4682709308546716, guid: ca86dcf38841d4033b03cbfb0f627a62, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -4.58
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4682709308546716, guid: ca86dcf38841d4033b03cbfb0f627a62, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.86
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca86dcf38841d4033b03cbfb0f627a62, type: 2}

@@ -100,7 +100,7 @@ public class TaskManager : MonoBehaviour {
 				break;
 			}
 
-			if (runningTime >= stage.timeBetweenTaskAdd) {
+			if (runningTime >= stage.timeBetweenTaskAdd || ongoingTasks.Count <= 0) {
 				AddTaskWithSO(getRandomTaskSO());
 				taskSpawnCount++;
 				runningTime = 0;
