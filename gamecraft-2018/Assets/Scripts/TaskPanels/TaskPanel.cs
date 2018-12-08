@@ -6,6 +6,7 @@ public abstract class TaskPanel : MonoBehaviour {
     [SerializeField]
     public TaskStub task;
 
+    public abstract void Start();
     public abstract void Display();
 
 }

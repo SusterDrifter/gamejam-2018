@@ -25,23 +25,28 @@ public class CameraController : MonoBehaviour {
 			case ShipPanel.Default:
 				MoveToPosition(new Vector3(0, 0, -10));
 				TweenToCameraSize(6.78f);
+                PanelController.GetInstance().SwitchTask(-1, null);
 				break;
 			case ShipPanel.Calculator:
 				MoveToPosition(new Vector3(-6.52f, -3.68f, -10));
 				TweenToCameraSize(2.98f);
+                PanelController.GetInstance().SwitchTask(1, PlayerController.GetInstance().Target);
 				break;
 			case ShipPanel.Thermostat:
 				MoveToPosition(new Vector3(-1.7f, 5.7f, -10));
                 TweenToCameraSize(1.83f);
-				break;
+                PanelController.GetInstance().SwitchTask(0, PlayerController.GetInstance().Target);
+                break;
 			case ShipPanel.Weapons:
 				MoveToPosition(new Vector3(-6.3f, 2.5f, -10));
                 TweenToCameraSize(3.16f);
-				break;
+                PanelController.GetInstance().SwitchTask(2, PlayerController.GetInstance().Target);
+                break;
 			case ShipPanel.Signature:
 				MoveToPosition(new Vector3(7.1f, -1.6f, -10));
                 TweenToCameraSize(2.72f);
-				break;
+                PanelController.GetInstance().SwitchTask(3, PlayerController.GetInstance().Target);
+                break;
 		}
 	}
 
