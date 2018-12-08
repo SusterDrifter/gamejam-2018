@@ -14,6 +14,6 @@ MonoBehaviour:
   taskName: Weapon
   scoreReward: 2
   maxTimeGiven: 12
-  minTimeGiven: 8
+  minTimeGiven: 10
   timeToCharge: 6
   totalPossibleCharge: 6

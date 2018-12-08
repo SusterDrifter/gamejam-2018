@@ -8,12 +8,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47748aff8e396403fafdb2f428cd7190, type: 3}
-  m_Name: Shoot_3
+  m_Script: {fileID: 11500000, guid: af2882e4c2ca7477688025aaa9700f1f, type: 3}
+  m_Name: Temp_ShortFast
   m_EditorClassIdentifier: 
-  taskName: Weapon
+  taskName: Temp.
   scoreReward: 2
-  maxTimeGiven: 14
-  minTimeGiven: 12
-  timeToCharge: 6
-  totalPossibleCharge: 10
+  maxTimeGiven: 10
+  minTimeGiven: 8
+  RateOfChange: 15
+  StartingTemperature: 15
+  TargetMin: 40
+  TargetMax: 45

@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af2882e4c2ca7477688025aaa9700f1f, type: 3}
   m_Name: Temp_5_1
   m_EditorClassIdentifier: 
-  taskName: 
+  taskName: Temp.
   scoreReward: 2
   maxTimeGiven: 15
   minTimeGiven: 13

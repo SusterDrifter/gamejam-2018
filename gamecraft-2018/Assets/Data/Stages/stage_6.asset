@@ -11,10 +11,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e36979ea45bfb4612a57d1f02a5ef76a, type: 3}
   m_Name: stage_6
   m_EditorClassIdentifier: 
-  timeBetweenTaskAdd: 2
+  timeBetweenTaskAdd: 1.75
   numOfTasks: 999
   tasks:
   - {fileID: 11400000, guid: ef27c91e9eb774e2282506972e4850c3, type: 2}
   - {fileID: 11400000, guid: ae10cb09d5ab741b8824db3cd2d6b60e, type: 2}
+  - {fileID: 11400000, guid: e1bc9ca126ac340c28261a88c759c85b, type: 2}
   - {fileID: 11400000, guid: 056c5d06b931d42a192045360423de11, type: 2}
   - {fileID: 11400000, guid: 37acbc48b65764df6b0202bbd1b82e00, type: 2}
+  - {fileID: 11400000, guid: 05644a2432c784b2ea4846775c81e51a, type: 2}
+  - {fileID: 11400000, guid: 1c641b5ee6c494deb9d5551e55322392, type: 2}
+  - {fileID: 11400000, guid: c829474f93f3f4b43bb8a88bae9ee8b2, type: 2}
+  - {fileID: 11400000, guid: 2904c8d833c08416bae48a909320f1de, type: 2}
+  - {fileID: 11400000, guid: 6e8e5ecb688fc47429b15734e44de8c5, type: 2}
+  - {fileID: 11400000, guid: 056c5d06b931d42a192045360423de11, type: 2}
+  - {fileID: 11400000, guid: fc77d35a0faf14c57b1822a87440b41a, type: 2}
+  - {fileID: 11400000, guid: 4552c9754d14646f7b08a1658785e337, type: 2}
+  - {fileID: 11400000, guid: b10fad2c0bb6246c69342ec06820822e, type: 2}
+  - {fileID: 11400000, guid: 48fdd12f9a747467d96f92433b8f01ba, type: 2}
+  - {fileID: 11400000, guid: e1bc9ca126ac340c28261a88c759c85b, type: 2}
+  - {fileID: 11400000, guid: 13769a5b72d5a483a8b7dd82b10dc2e3, type: 2}
+  - {fileID: 11400000, guid: f1f4cddd4ad834e3abda05a160bfbf15, type: 2}
+  - {fileID: 11400000, guid: a588496dce39a4457ac983ae5ee9fa5c, type: 2}
+  - {fileID: 11400000, guid: 36c8eed57e754426881a4ccfd06821e3, type: 2}
