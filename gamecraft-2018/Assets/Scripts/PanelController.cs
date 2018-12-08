@@ -10,7 +10,7 @@ public class PanelController : MonoBehaviour {
     public List<TaskPanel> Panels;
     public Canvas canvas;
 
-    private TaskStub currentTask;
+    public Task currentTask;
     private int currentTaskType;
 
     // Use this for initialization.
@@ -25,13 +25,20 @@ public class PanelController : MonoBehaviour {
 	}
 
     // Switch the displayed task to the specified task in the next frame.
-    public void SwitchTask(int taskType, TaskStub task) {
+    public void SwitchTask(int newTaskType, Task task) {
+        // Back to home
+        if (newTaskType == -1) { 
+            Panels[currentTaskType].gameObject.active = false; 
+            return; 
+        }
+
         // Ignore if no change
-        if (currentTaskType == taskType && currentTask == task) return;
+        if (currentTaskType == newTaskType && currentTask == task) return;
 
         Panels[currentTaskType].gameObject.active = false;
-        Panels[taskType].gameObject.active = true;
-        currentTaskType = taskType;
+        Panels[newTaskType].gameObject.active = true;
+        Panels[newTaskType].Start();
+        currentTaskType = newTaskType;
         currentTask = task;
     }
 

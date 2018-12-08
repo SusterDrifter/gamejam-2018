@@ -22,10 +22,9 @@ public class AirconTaskPanel : TaskPanel
 
 
     // Use this for initialization
-    void Start()
+    public override void Start()
     {
-        GameManager.instance.StartGame();
-        task = (TemperatureTask)TaskManager.instance.AddTaskWithSO(t);
+        task = (TemperatureTask)PanelController.GetInstance().currentTask;
 
         TempBar.fillAmount = (task.CurrentTemp - MIN_TEMP) / 35;
         SliderMin.value = task.TargetMin;

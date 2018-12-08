@@ -23,9 +23,8 @@ public class MeteoriteTaskPanel : TaskPanel {
     }
 
     // Use this for initialization
-    void Start () {
-        GameManager.instance.StartGame();
-        task = (ShootingTask)TaskManager.instance.AddTaskWithSO(t);
+    public override void Start () {
+        task = (ShootingTask)PanelController.GetInstance().currentTask;
         StatusBar.fillAmount = 0f;
         StatusBarPartial.fillAmount = task.timeToCharge / task.totalChargableTime;
     }

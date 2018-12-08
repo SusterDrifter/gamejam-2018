@@ -4,7 +4,18 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
+    private static PlayerController instance;
+    private PlayerController() {}
+    public static PlayerController GetInstance() {
+        if (instance == null) {
+            instance = new PlayerController();
+        }
+        return instance;
+    }
+
 	public CameraController cameraController;
+
+    public Task Target;
 
 	private void Awake()
 	{
@@ -43,9 +54,9 @@ public class PlayerController : MonoBehaviour {
 		int index = number - 1;
 		if (index >= TaskManager.instance.ongoingTasks.Count)
 			return;
-		Task target = TaskManager.instance.ongoingTasks[index];
+		Target = TaskManager.instance.ongoingTasks[index];
 
-		GameManager.instance.cameraController.JumpToShipPanel(target.taskPanel);
+		GameManager.instance.cameraController.JumpToShipPanel(Target.taskPanel);
 	}
 
 }

@@ -26,9 +26,8 @@ public class SigningTaskPanel : TaskPanel {
     }
 
     // Use this for initialization
-    void Start () {
-        GameManager.instance.StartGame();
-        task = (SignOffTask)TaskManager.instance.AddTaskWithSO(t);
+    public override void Start () {
+        task = (SignOffTask)PanelController.GetInstance().currentTask;
         char[] arr = { 'a', 'b', 'c', 'd' };
         Dictionary = arr;
 

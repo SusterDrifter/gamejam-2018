@@ -16,10 +16,9 @@ public class CalculatorTaskPanel : TaskPanel {
 
     public TaskSO t;
 
-	// Use this for initialization
-	void Start () {
-        GameManager.instance.StartGame();
-        task = (CalculatorTask)TaskManager.instance.AddTaskWithSO(t);
+    // Use this for initialization
+    public override void Start () {
+        task = (CalculatorTask)PanelController.GetInstance().currentTask;
 
         QuestionText.text = task.questionText;
 
