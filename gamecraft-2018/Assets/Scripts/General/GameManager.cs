@@ -157,16 +157,22 @@ public class GameManager : MonoBehaviour {
 
 	public void GoToNextAvailableTask() {
 		List<Task> tasks = TaskManager.instance.ongoingTasks;
-
+        
 		float min = float.MaxValue;
 		ShipPanel desired = ShipPanel.Default;
+		Task targetTask = null;
         foreach (var item in tasks)
 		{
 			if (item.TimeRemaining < min) {
 				min = item.TimeRemaining;
 				desired = item.taskPanel;
+				targetTask = item;
 			}
 		}
+
+		GameManager.instance.cameraController.panelController.SwitchTask(-1, null);
+		PlayerController.GetInstance().Target = targetTask;
+
 		cameraController.JumpToShipPanel(desired);
 	}
 

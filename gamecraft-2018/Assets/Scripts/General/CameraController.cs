@@ -6,7 +6,7 @@ using DG.Tweening;
 public class CameraController : MonoBehaviour {
 
 	Camera cameraComponent;
-    PanelController panelController;
+    public PanelController panelController;
     public PlayerController PlayerController;
 
     private void Awake()
