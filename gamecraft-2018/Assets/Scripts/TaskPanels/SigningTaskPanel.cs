@@ -73,10 +73,12 @@ public class SigningTaskPanel : TaskPanel {
         if (!task.Signed) { // Input does nothing if it's already signed
             if (i == 4)
             {
+                if (InputText.text.Length == 0) return;
                 InputText.text = InputText.text.Substring(0, InputText.text.Length - 1);
                 return;
             }
-            InputText.text += Dictionary[i];
+            if (InputText.text.Length < 5) 
+                InputText.text += Dictionary[i];
         }
     }
 
