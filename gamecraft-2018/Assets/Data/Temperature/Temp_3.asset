@@ -15,7 +15,7 @@ MonoBehaviour:
   scoreReward: 2
   maxTimeGiven: 20
   minTimeGiven: 18
-  RateOfChange: 5
+  RateOfChange: -5
   StartingTemperature: 32.5
   TargetMin: 40
   TargetMax: 45

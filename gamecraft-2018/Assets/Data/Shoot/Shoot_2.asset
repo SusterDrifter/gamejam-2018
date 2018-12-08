@@ -16,4 +16,4 @@ MonoBehaviour:
   maxTimeGiven: 13
   minTimeGiven: 8
   timeToCharge: 2
-  totalPossibleCharge: 10
+  totalPossibleCharge: 5

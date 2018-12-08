@@ -15,5 +15,5 @@ MonoBehaviour:
   scoreReward: 2
   maxTimeGiven: 12
   minTimeGiven: 8
-  timeToCharge: 5
-  totalPossibleCharge: 8
+  timeToCharge: 6
+  totalPossibleCharge: 6
