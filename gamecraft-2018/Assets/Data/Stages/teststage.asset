@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: teststage
   m_EditorClassIdentifier: 
   timeBetweenTaskAdd: 0.2
-  numOfTasks: 7
+  numOfTasks: 8
   tasks:
   - {fileID: 11400000, guid: b967a4234d5bb4a7c94912a50add7aa3, type: 2}
   - {fileID: 11400000, guid: 8cc9785b993bd4f30b8ac052ae9353c2, type: 2}
