@@ -33,19 +33,18 @@ public class PanelController : MonoBehaviour {
             Panels[i].panelController = this;
         }
         // Back to home
-        if (newTaskType == -1) { 
+        if (newTaskType == -1) {
             // Other than this, there is an active panel.
-            if (currentTaskType != -1) 
-                Panels[currentTaskType].gameObject.SetActive(false); 
-
+            for (int i = 0; i < Panels.Count; i++)
+            {
+                Panels[i].gameObject.SetActive(false);
+            }
+            GameManager.instance.cameraController.JumpToShipPanel(ShipPanel.Calculator);
             return; 
         }
 
         // Ignore if no change
-        if (currentTaskType == newTaskType && currentTask == task) return;
-        if (currentTaskType != -1) {
-            Panels[currentTaskType].gameObject.SetActive(false);
-        }
+        if (currentTask == task) return;
 
         Panels[newTaskType].gameObject.SetActive(true);
         Panels[newTaskType].Start();
