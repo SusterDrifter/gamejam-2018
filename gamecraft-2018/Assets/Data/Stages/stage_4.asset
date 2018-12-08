@@ -13,4 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeBetweenTaskAdd: 7
   numOfTasks: 30
-  tasks: []
+  tasks:
+  - {fileID: 11400000, guid: a588496dce39a4457ac983ae5ee9fa5c, type: 2}
+  - {fileID: 11400000, guid: cca730e88562d4b0b80012ddfabf90bc, type: 2}
+  - {fileID: 11400000, guid: fc77d35a0faf14c57b1822a87440b41a, type: 2}
+  - {fileID: 11400000, guid: 44688a534801d4438bb7b56b9f42d3e7, type: 2}

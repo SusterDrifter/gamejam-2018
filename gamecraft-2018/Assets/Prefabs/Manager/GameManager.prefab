@@ -52,7 +52,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stagesList:
-  - {fileID: 11400000, guid: 550007b52de4342eb976edf43276c85a, type: 2}
+  - {fileID: 11400000, guid: 5991969d8a3d249d9a9a4e6587ebf5fd, type: 2}
+  - {fileID: 11400000, guid: e64bffdac19c84c4fbabc521482af097, type: 2}
+  - {fileID: 11400000, guid: 51e4fe65b15a048d1a06af21d303e4ea, type: 2}
+  - {fileID: 11400000, guid: 994a60afcfe27418c812eda3e9962047, type: 2}
+  - {fileID: 11400000, guid: d937e9a9283194585b99041bcbdfa8fd, type: 2}
+  - {fileID: 11400000, guid: bab4c619197ce4457908802d1a911456, type: 2}
   _timeRemaining: 0
   _startingTime: 40
   isPaused: 1
