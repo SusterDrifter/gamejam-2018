@@ -66,6 +66,7 @@ public class MeteoriteTaskPanel : TaskPanel {
         }
         if (task.Charged) {
             task.Solved = true;
+            task.OnTaskSuccess();
             StatusBar.color = Color.green;
         }
     }

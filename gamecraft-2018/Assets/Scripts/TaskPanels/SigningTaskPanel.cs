@@ -81,6 +81,7 @@ public class SigningTaskPanel : TaskPanel {
             if (!task.needsApproving) {
                 task.Solved = true;
                 StatusText.text = "CLEARED";
+                task.OnTaskSuccess();
             } else {
                 task.isApproving = true;
                 StatusText.text = "PENDING";
@@ -90,6 +91,7 @@ public class SigningTaskPanel : TaskPanel {
             // Approved finish
             if (task.timeApprovedFor >= task.timeToApprove) {
                 task.Solved = true;
+                task.OnTaskSuccess();
                 StatusText.text = "CLEARED";
             }
         }

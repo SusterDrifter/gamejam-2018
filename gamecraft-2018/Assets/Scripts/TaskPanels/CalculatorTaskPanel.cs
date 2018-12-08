@@ -55,6 +55,8 @@ public class CalculatorTaskPanel : TaskPanel {
         if (int.Parse(AnswerText.text) == task.correctAnswer) {
             AnswerText.color = Color.green;
             task.Solved = true;
+            task.OnTaskSuccess();
+
         }
     }
 }
