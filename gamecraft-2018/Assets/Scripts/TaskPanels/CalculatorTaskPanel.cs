@@ -21,13 +21,15 @@ public class CalculatorTaskPanel : TaskPanel {
 
     // Use this for initialization
     public override void Start () {
-        task = (CalculatorTask)PanelController.GetInstance().currentTask;
+        task = (CalculatorTask)panelController.currentTask;
 
         QuestionText.text = task.questionText;
+        AnswerText.text = "";
 
         for (int i = 0; i < Buttons.Length; i++) {
             int j = i;
             Button b = Buttons[i];
+            b.onClick.RemoveAllListeners();
             b.onClick.AddListener(() => this.PressButton(j));
         }
 	}

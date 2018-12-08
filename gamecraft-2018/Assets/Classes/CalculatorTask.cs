@@ -25,7 +25,8 @@ public class CalculatorTask : Task {
         }
         this.timeGiven = Random.Range(so.minTimeGiven, so.maxTimeGiven);
         this.timeRemaining = TimeGiven;
-	}
+        taskPanel = ShipPanel.Calculator;
+    }
 
     public CalculatorTask(int correctAnswer, string questionText, float timeGiven) {
         this.timeGiven = timeGiven;

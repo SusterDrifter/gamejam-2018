@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class PanelController : MonoBehaviour {
 
-    private static PanelController singleton;
-
     [SerializeField]
     public List<TaskPanel> Panels;
     public Canvas canvas;
 
     public Task currentTask;
-    private int currentTaskType;
+    private int currentTaskType = -1;
 
     // Use this for initialization.
     void Start () {
         for (int i = 1; i < Panels.Count; i++) {
-            Panels[i].gameObject.active = false;
+            Panels[i].gameObject.SetActive(false);
+            Panels[i].panelController = this;
         }
+        Debug.Log("Everything initialzied");
 	}
 	
 	// Update is called once per frame.
@@ -26,25 +26,25 @@ public class PanelController : MonoBehaviour {
 
     // Switch the displayed task to the specified task in the next frame.
     public void SwitchTask(int newTaskType, Task task) {
+        currentTask = task;
         // Back to home
         if (newTaskType == -1) { 
-            Panels[currentTaskType].gameObject.active = false; 
+            // Other than this, there is an active panel.
+            if (currentTaskType != -1) 
+                Panels[currentTaskType].gameObject.SetActive(false); 
+
             return; 
         }
 
         // Ignore if no change
         if (currentTaskType == newTaskType && currentTask == task) return;
+        if (currentTaskType != -1) {
+            Panels[currentTaskType].gameObject.SetActive(false);
+        }
 
-        Panels[currentTaskType].gameObject.active = false;
-        Panels[newTaskType].gameObject.active = true;
+        Panels[newTaskType].gameObject.SetActive(true);
         Panels[newTaskType].Start();
         currentTaskType = newTaskType;
-        currentTask = task;
-    }
 
-    // Singleton pattern.
-    public static PanelController GetInstance() {
-        if (singleton == null) singleton = new PanelController();
-        return singleton;
     }
 }
