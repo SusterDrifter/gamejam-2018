@@ -1062,7 +1062,7 @@ Prefab:
     - target: {fileID: 224770554343998526, guid: b18a6f74aa03b47e6a7914be41c8d176,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 0.19999695
+      value: 0.2000122
       objectReference: {fileID: 0}
     - target: {fileID: 224356840639902114, guid: b18a6f74aa03b47e6a7914be41c8d176,
         type: 2}
@@ -1072,7 +1072,7 @@ Prefab:
     - target: {fileID: 224684627229852208, guid: b18a6f74aa03b47e6a7914be41c8d176,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 0.8999996
+      value: 0.9000244
       objectReference: {fileID: 0}
     - target: {fileID: 1249805907387088, guid: b18a6f74aa03b47e6a7914be41c8d176, type: 2}
       propertyPath: m_IsActive
@@ -1752,7 +1752,7 @@ Prefab:
     - target: {fileID: 224684627229852208, guid: b18a6f74aa03b47e6a7914be41c8d176,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0.85001993
+      value: 0.8500061
       objectReference: {fileID: 0}
     - target: {fileID: 114786600172179910, guid: b18a6f74aa03b47e6a7914be41c8d176,
         type: 2}
@@ -1762,7 +1762,7 @@ Prefab:
     - target: {fileID: 224770554343998526, guid: b18a6f74aa03b47e6a7914be41c8d176,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 0.13099957
+      value: 0.13101196
       objectReference: {fileID: 0}
     - target: {fileID: 224770554343998526, guid: b18a6f74aa03b47e6a7914be41c8d176,
         type: 2}
@@ -1807,7 +1807,7 @@ Prefab:
     - target: {fileID: 224521815548974698, guid: b18a6f74aa03b47e6a7914be41c8d176,
         type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 114996875697282702, guid: b18a6f74aa03b47e6a7914be41c8d176,
         type: 2}
@@ -1896,7 +1896,7 @@ Prefab:
     - target: {fileID: 224138765659625612, guid: b18a6f74aa03b47e6a7914be41c8d176,
         type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 224138765659625612, guid: b18a6f74aa03b47e6a7914be41c8d176,
         type: 2}
@@ -1973,6 +1973,11 @@ Prefab:
         type: 2}
       propertyPath: m_FontData.m_Alignment
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114786600172179910, guid: b18a6f74aa03b47e6a7914be41c8d176,
+        type: 2}
+      propertyPath: m_Text
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b18a6f74aa03b47e6a7914be41c8d176, type: 2}
