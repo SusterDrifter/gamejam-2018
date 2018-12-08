@@ -19,7 +19,7 @@ public abstract class TaskSO : ScriptableObject {
 
 	public virtual void OnTaskSuccess(Task task) {
 		Debug.Log("On Task Success.");
-		GameManager.instance.timeRemaining += (task.TimeGiven / 2.69f);
+		GameManager.instance.timeRemaining += (task.TimeGiven / 2.8f);
 		GameManager.instance.currentScore++;
 		TaskManager.instance.RemoveTask(task);
         GameManager.instance.cameraController.panelController.SwitchTask(-1,null);
@@ -27,7 +27,7 @@ public abstract class TaskSO : ScriptableObject {
 
 	public virtual void OnTaskFailure(Task task) {
         Debug.Log("On Task Failure.: " + task);
-       
+		GameManager.instance.timeRemaining -= 3;
         if (GameManager.instance.cameraController.panelController.currentTask == task)
             GameManager.instance.cameraController.panelController.SwitchTask(-1, null);
 

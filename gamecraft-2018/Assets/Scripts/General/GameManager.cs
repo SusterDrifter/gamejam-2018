@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour {
     }
 	#endregion
 
+	[SerializeField]
 	private int currentStageIndex = 0;
 
 	private int stageGap = 10;
