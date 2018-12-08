@@ -22,12 +22,13 @@ public abstract class TaskSO : ScriptableObject {
 		GameManager.instance.timeRemaining += (task.TimeGiven / 3.0f);
 		GameManager.instance.currentScore++;
 		TaskManager.instance.RemoveTask(task);
-		GameManager.instance.GoToNextAvailableTask();
+        GameManager.instance.cameraController.panelController.SwitchTask(-1,null);
 	}
 
 	public virtual void OnTaskFailure(Task task) {
 		Debug.Log("On Task Failure.");
 		TaskManager.instance.RemoveTask(task);
-	}
+        GameManager.instance.cameraController.panelController.SwitchTask(-1, null);
+    }
 
 }
