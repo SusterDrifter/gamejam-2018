@@ -41,8 +41,8 @@ public class CameraController : MonoBehaviour {
                 panelController.SwitchTask(0, PlayerController.Target);
                 break;
 			case ShipPanel.Weapons:
-				MoveToPosition(new Vector3(-6.3f, 2.5f, -10));
-                TweenToCameraSize(3.16f);
+				MoveToPosition(new Vector3(-4.58f,1.86f, -10));
+                TweenToCameraSize(3.98f);
                 panelController.SwitchTask(2, PlayerController.Target);
                 break;
 			case ShipPanel.Signature:
