@@ -29,6 +29,9 @@ public class TemperatureTask : Task {
 	// Update is called once per frame
 	public override void Update () {
         CurrentTemp += RateOfChange * Time.deltaTime;
+        if (CurrentTemp >= 50 || CurrentTemp <= 15) {
+            RateOfChange *= -1;
+        }
         base.Update();
 	}
 }
