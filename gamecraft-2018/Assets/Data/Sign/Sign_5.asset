@@ -13,8 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   taskName: Sign
   scoreReward: 2
-  maxTimeGiven: 10
-  minTimeGiven: 3
+  maxTimeGiven: 9
+  minTimeGiven: 7
   needApproval: 0
-  timeToApproveMin: 3
-  timeToApproveMax: 7
+  timeToApproveMin: 4
+  timeToApproveMax: 6

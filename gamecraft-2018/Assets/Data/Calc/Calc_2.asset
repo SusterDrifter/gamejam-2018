@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   taskName: Math
   scoreReward: 2
-  maxTimeGiven: 11
+  maxTimeGiven: 13
   minTimeGiven: 8
   correctAnswer: -1000000
   questionText: 

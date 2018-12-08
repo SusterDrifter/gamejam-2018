@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   taskName: Weapon
   scoreReward: 2
-  maxTimeGiven: 10
-  minTimeGiven: 3
-  timeToCharge: 5
+  maxTimeGiven: 12
+  minTimeGiven: 8
+  timeToCharge: 3
   totalPossibleCharge: 8
