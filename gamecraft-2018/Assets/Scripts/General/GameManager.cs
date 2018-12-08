@@ -134,6 +134,7 @@ public class GameManager : MonoBehaviour {
 		TaskManager.instance.FlushTaskManager();
 		currentStageIndex++;
 		HUDCanvasManager.instance.StageNumberText.text = (currentStageIndex + 1).ToString();
+		TaskManager.instance.StartStage(stagesList[currentStageIndex]);
         // maybe start
 	}
 
