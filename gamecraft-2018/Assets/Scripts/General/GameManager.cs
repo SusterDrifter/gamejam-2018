@@ -123,6 +123,7 @@ public class GameManager : MonoBehaviour {
 
 	public void MainMenuToGameStart() {
 		HUDCanvasManager.instance.GameplayCanvasGroup.gameObject.SetActive(true);
+		HUDCanvasManager.instance.GameplayCanvasGroup.alpha = 0.0f;
 		HUDCanvasManager.instance.GameplayCanvasGroup.DOFade(1.0f, 0.5f);
 		HUDCanvasManager.instance.MainMenuCanvasGroup.DOFade(0.0f, 0.5f).OnComplete(() => 
 		                                                                            HUDCanvasManager.instance.MainMenuCanvasGroup.gameObject.SetActive(false));
