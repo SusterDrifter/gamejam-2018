@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e36979ea45bfb4612a57d1f02a5ef76a, type: 3}
   m_Name: stage_2
   m_EditorClassIdentifier: 
-  timeBetweenTaskAdd: 9
+  timeBetweenTaskAdd: 6
   numOfTasks: 15
   tasks:
   - {fileID: 11400000, guid: d9bad31b74e524c8486aca8b51fd4f43, type: 2}
