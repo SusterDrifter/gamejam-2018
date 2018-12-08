@@ -55,6 +55,7 @@ public class AirconTaskPanel : TaskPanel
 
     public void LeftButtonPressed()
     {
+        Debug.Log("LEFT");
 		HUDCanvasManager.instance.audioSource.PlayOneShot(tempColdButtonSound);
         if (task.RateOfChange > 0) {
             task.RateOfChange *= -1;
@@ -62,13 +63,15 @@ public class AirconTaskPanel : TaskPanel
     }
     public void RightButtonPressed()
     {
-		HUDCanvasManager.instance.audioSource.PlayOneShot(tempHotButtonSound);
+        Debug.Log("RIGHT");
+        HUDCanvasManager.instance.audioSource.PlayOneShot(tempHotButtonSound);
         if (task.RateOfChange < 0) {
             task.RateOfChange *= -1;
         }
     }
     public void StopButtonPressed()
     {
+        Debug.Log("CENTER");
         if (task.TargetMin <= task.CurrentTemp && task.CurrentTemp <= task.TargetMax) {
             task.Solved = true;
             task.OnTaskSuccess();

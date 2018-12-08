@@ -1977,11 +1977,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4682709308546716, guid: ca86dcf38841d4033b03cbfb0f627a62, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -5.84
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4682709308546716, guid: ca86dcf38841d4033b03cbfb0f627a62, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.32
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4682709308546716, guid: ca86dcf38841d4033b03cbfb0f627a62, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2010,7 +2010,7 @@ Prefab:
     - target: {fileID: 20123018514402834, guid: ca86dcf38841d4033b03cbfb0f627a62,
         type: 2}
       propertyPath: orthographic size
-      value: 3.4404528
+      value: 6.78
       objectReference: {fileID: 0}
     - target: {fileID: 114247247138378450, guid: ca86dcf38841d4033b03cbfb0f627a62,
         type: 2}

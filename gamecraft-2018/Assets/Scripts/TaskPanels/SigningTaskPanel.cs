@@ -47,7 +47,10 @@ public class SigningTaskPanel : TaskPanel {
         }
         InputText.text = "";
         TodaysSignatureText.text = TodaysSignature.GetInstance().signature;
-        StatusText.text = "PLS SIGN";
+        if (!task.isApproving)
+            StatusText.text = "PLS SIGN";
+        else
+            StatusText.text = "PENDING";
     }
 	
 	// Update is called once per frame
