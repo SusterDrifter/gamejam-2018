@@ -26,7 +26,7 @@ public class PanelController : MonoBehaviour {
 
     // Switch the displayed task to the specified task in the next frame.
     public void SwitchTask(int newTaskType, Task task) {
-        currentTask = task;
+
         for (int i = 0; i < Panels.Count; i++)
         {
             Panels[i].gameObject.SetActive(false);
@@ -39,13 +39,13 @@ public class PanelController : MonoBehaviour {
             {
                 Panels[i].gameObject.SetActive(false);
             }
-            GameManager.instance.cameraController.JumpToShipPanel(ShipPanel.Calculator);
+			GameManager.instance.cameraController.JumpToShipPanel(ShipPanel.Default);
             return; 
         }
 
         // Ignore if no change
         if (currentTask == task) return;
-
+		currentTask = task;
         Panels[newTaskType].gameObject.SetActive(true);
         Panels[newTaskType].Start();
         currentTaskType = newTaskType;

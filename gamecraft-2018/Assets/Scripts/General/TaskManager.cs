@@ -114,6 +114,7 @@ public class TaskManager : MonoBehaviour {
 		}
 
 		GameManager.instance.NextStage();
+		Debug.Log("Next stage");
     }
 
 	public void StartStage(StageSO stage) {
