@@ -15,11 +15,13 @@ public class AirconTaskPanel : TaskPanel
     public Image TempBar;
     public Slider SliderMin;
     public Slider SliderMax;
-
+    
     public TemperatureTask task;
 
     public TaskSO t;
 
+	public AudioClip tempColdButtonSound;
+	public AudioClip tempHotButtonSound;
 
     // Use this for initialization
     public override void Start()
@@ -53,12 +55,14 @@ public class AirconTaskPanel : TaskPanel
 
     public void LeftButtonPressed()
     {
+		HUDCanvasManager.instance.audioSource.PlayOneShot(tempColdButtonSound);
         if (task.RateOfChange > 0) {
             task.RateOfChange *= -1;
         }
     }
     public void RightButtonPressed()
     {
+		HUDCanvasManager.instance.audioSource.PlayOneShot(tempHotButtonSound);
         if (task.RateOfChange < 0) {
             task.RateOfChange *= -1;
         }

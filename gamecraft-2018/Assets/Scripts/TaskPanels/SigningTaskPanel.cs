@@ -21,6 +21,11 @@ public class SigningTaskPanel : TaskPanel {
 
     public TaskSO t;
 
+
+	public AudioClip signSendSound;
+
+	public AudioClip signSymbolSound;
+
     public override void Display()
     {
     }
@@ -61,6 +66,7 @@ public class SigningTaskPanel : TaskPanel {
     }
 
     public void ClickInputButton(int i) {
+		HUDCanvasManager.instance.audioSource.PlayOneShot(signSymbolSound);
         if (!task.Signed) { // Input does nothing if it's already signed
             if (i == 4)
             {
@@ -80,6 +86,7 @@ public class SigningTaskPanel : TaskPanel {
             if (!task.needsApproving) {
                 task.Solved = true;
                 StatusText.text = "CLEARED";
+				HUDCanvasManager.instance.audioSource.PlayOneShot(signSendSound);
                 task.OnTaskSuccess();
             } else {
                 task.isApproving = true;
@@ -91,6 +98,7 @@ public class SigningTaskPanel : TaskPanel {
             if (task.timeApprovedFor >= task.timeToApprove) {
                 task.Solved = true;
                 task.OnTaskSuccess();
+				HUDCanvasManager.instance.audioSource.PlayOneShot(signSendSound);
                 StatusText.text = "CLEARED";
             }
         }

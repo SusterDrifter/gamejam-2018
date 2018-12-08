@@ -39,6 +39,10 @@ public class HUDCanvasManager : MonoBehaviour {
 
 	public CanvasGroup MainMenuCanvasGroup;
 
+	public AudioClip clickSound;
+
+	public AudioSource audioSource;
+
 	private void Awake()
     {
         if (!_hudCanvasManager)
@@ -59,15 +63,11 @@ public class HUDCanvasManager : MonoBehaviour {
             if (instance != this)
                 Destroy(gameObject);
         }
+
+		audioSource = GetComponent<AudioSource>();
     }
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+	public void PlayClick() {
+		audioSource.PlayOneShot(clickSound);
 	}
 }

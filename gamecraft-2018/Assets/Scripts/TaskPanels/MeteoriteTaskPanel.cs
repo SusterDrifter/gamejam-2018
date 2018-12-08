@@ -18,6 +18,9 @@ public class MeteoriteTaskPanel : TaskPanel {
 
     public TaskSO t;
 
+	public AudioClip asteroidHitSound;
+	public AudioClip asteroidInputSound;
+
     public override void Display()
     {
     }
@@ -61,11 +64,13 @@ public class MeteoriteTaskPanel : TaskPanel {
 
     public void PressButton() {
         if (!task.isCharging && !task.Solved) {
+			HUDCanvasManager.instance.audioSource.PlayOneShot(asteroidInputSound);
             task.isCharging = true;
         }
         if (task.Charged) {
             task.Solved = true;
             task.OnTaskSuccess();
+			HUDCanvasManager.instance.audioSource.PlayOneShot(asteroidHitSound);
             StatusBar.color = Color.green;
         }
     }

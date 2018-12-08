@@ -2728,6 +2728,8 @@ MonoBehaviour:
   MeteorImage: {fileID: 114814045865162554}
   maxScale: 4.5
   t: {fileID: 11400000, guid: 8cc9785b993bd4f30b8ac052ae9353c2, type: 2}
+  asteroidHitSound: {fileID: 8300000, guid: d2b0b32145a274aeba0258b14e9b3e47, type: 3}
+  asteroidInputSound: {fileID: 8300000, guid: af08efa1f2f5e4e70b26453475ef165e, type: 3}
 --- !u!114 &114439411359941482
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2962,6 +2964,8 @@ MonoBehaviour:
   ButtonPrefab: {fileID: 1521910130649878, guid: aa69ac82439984af681fb247852a3fbd,
     type: 2}
   t: {fileID: 11400000, guid: 107f14eaddd86496f841a2085649391d, type: 2}
+  signSendSound: {fileID: 8300000, guid: 697ffe78ec59f47bcb9f307938aac0d7, type: 3}
+  signSymbolSound: {fileID: 8300000, guid: 22c15d6b604df4636ac6d9b64d07fb36, type: 3}
 --- !u!114 &114497874218722912
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4069,6 +4073,8 @@ MonoBehaviour:
   QuestionText: {fileID: 114765356847451012}
   AnswerText: {fileID: 114785148410003380}
   t: {fileID: 11400000, guid: b967a4234d5bb4a7c94912a50add7aa3, type: 2}
+  inputSound: {fileID: 8300000, guid: 81d3175abb595465fb0f163242a8e77f, type: 3}
+  wrongSound: {fileID: 8300000, guid: 28c3ed66371cd4880995270a3cf5e791, type: 3}
 --- !u!114 &114763521182031908
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4589,6 +4595,8 @@ MonoBehaviour:
   SliderMin: {fileID: 114621342342337158}
   SliderMax: {fileID: 114289780425154588}
   t: {fileID: 0}
+  tempColdButtonSound: {fileID: 8300000, guid: 6c0041e91a03941cf92a401e1c9a67aa, type: 3}
+  tempHotButtonSound: {fileID: 8300000, guid: 1d2761311d0bb4dd895db32474e80537, type: 3}
 --- !u!114 &114957186759007482
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5425,7 +5433,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.000015258789}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 60, y: -80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224027348841506054
@@ -5839,7 +5847,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.37662497, y: 0.8333334}
   m_AnchorMax: {x: 0.628, y: 0.9194444}
-  m_AnchoredPosition: {x: -1.5000305, y: 0.5001221}
+  m_AnchoredPosition: {x: -1.5000305, y: 0.50024414}
   m_SizeDelta: {x: -1, y: -1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224250299533675784

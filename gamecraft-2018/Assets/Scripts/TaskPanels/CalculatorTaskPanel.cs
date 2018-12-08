@@ -16,6 +16,9 @@ public class CalculatorTaskPanel : TaskPanel {
 
     public TaskSO t;
 
+	public AudioClip inputSound;
+	public AudioClip wrongSound;
+
     // Use this for initialization
     public override void Start () {
         task = (CalculatorTask)PanelController.GetInstance().currentTask;
@@ -41,6 +44,8 @@ public class CalculatorTaskPanel : TaskPanel {
 
     public void PressButton(int i) {
         if (task.Solved) return;
+
+		HUDCanvasManager.instance.audioSource.PlayOneShot(inputSound);
 
         if (i == ERASE) {
             if (AnswerText.text.Length == 0) return;
