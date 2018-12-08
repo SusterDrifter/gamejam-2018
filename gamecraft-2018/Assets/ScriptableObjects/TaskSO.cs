@@ -26,9 +26,11 @@ public abstract class TaskSO : ScriptableObject {
 	}
 
 	public virtual void OnTaskFailure(Task task) {
-		Debug.Log("On Task Failure.");
-		TaskManager.instance.RemoveTask(task);
-        GameManager.instance.cameraController.panelController.SwitchTask(-1, null);
-    }
+        Debug.Log("On Task Failure.: " + task);
+       
+        if (GameManager.instance.cameraController.panelController.currentTask == task)
+            GameManager.instance.cameraController.panelController.SwitchTask(-1, null);
 
+        TaskManager.instance.RemoveTask(task);
+    }
 }

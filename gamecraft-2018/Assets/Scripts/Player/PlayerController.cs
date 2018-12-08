@@ -6,11 +6,10 @@ public class PlayerController : MonoBehaviour {
 
     private static PlayerController instance;
     private PlayerController() {}
-    public static PlayerController GetInstance() {
-        if (instance == null) {
-            instance = new PlayerController();
+    public static PlayerController Instance {
+        get {
+            return instance;
         }
-        return instance;
     }
 
 	public CameraController cameraController;
@@ -20,7 +19,13 @@ public class PlayerController : MonoBehaviour {
 	private void Awake()
 	{
 		cameraController = Camera.main.GetComponent<CameraController>();
-	}
+        if (instance == null)
+        {
+            {
+                instance = this;
+            }
+        }
+    }
 
 	private void Update()
 	{

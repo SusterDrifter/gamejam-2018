@@ -167,7 +167,7 @@ public class GameManager : MonoBehaviour {
 		}
 
 		GameManager.instance.cameraController.panelController.SwitchTask(-1, null);
-		PlayerController.GetInstance().Target = targetTask;
+		PlayerController.Instance.Target = targetTask;
 
 		cameraController.JumpToShipPanel(desired);
 	}
