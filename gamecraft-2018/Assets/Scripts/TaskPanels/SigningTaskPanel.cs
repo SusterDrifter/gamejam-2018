@@ -27,7 +27,7 @@ public class SigningTaskPanel : TaskPanel {
 
     // Use this for initialization
     public override void Start () {
-        task = (SignOffTask)PanelController.GetInstance().currentTask;
+        task = (SignOffTask)panelController.currentTask;
         char[] arr = { 'a', 'b', 'c', 'd' };
         Dictionary = arr;
 

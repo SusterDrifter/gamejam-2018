@@ -21,6 +21,7 @@ public class ShootingTask : Task {
         totalChargableTime = stso.totalPossibleCharge;
         timeCharged = 0f;
         timeGiven = stso.maxTimeGiven;
+        taskPanel = ShipPanel.Weapons;
     }
 
 	// Use this for initialization

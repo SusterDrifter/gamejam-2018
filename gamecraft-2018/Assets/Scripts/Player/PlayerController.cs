@@ -55,8 +55,9 @@ public class PlayerController : MonoBehaviour {
 		if (index >= TaskManager.instance.ongoingTasks.Count)
 			return;
 		Target = TaskManager.instance.ongoingTasks[index];
+        GameManager.instance.cameraController.PlayerController = this;
 
-		GameManager.instance.cameraController.JumpToShipPanel(Target.taskPanel);
+        GameManager.instance.cameraController.JumpToShipPanel(Target.taskPanel);
 	}
 
 }

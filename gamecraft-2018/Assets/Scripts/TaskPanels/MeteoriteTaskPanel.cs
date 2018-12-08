@@ -24,7 +24,7 @@ public class MeteoriteTaskPanel : TaskPanel {
 
     // Use this for initialization
     public override void Start () {
-        task = (ShootingTask)PanelController.GetInstance().currentTask;
+        task = (ShootingTask)panelController.currentTask;
         StatusBar.fillAmount = 0f;
         StatusBarPartial.fillAmount = task.timeToCharge / task.totalChargableTime;
     }

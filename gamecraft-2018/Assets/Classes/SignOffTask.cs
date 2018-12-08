@@ -20,7 +20,7 @@ public class SignOffTask : Task {
         timeToApprove = Random.Range(((SignOffTaskSO)so).timeToApproveMin,
                                      ((SignOffTaskSO)so).timeToApproveMax);
         todaysSignature = TodaysSignature.GetInstance().signature;
-
+        taskPanel = ShipPanel.Signature;
     }
 
 	// Use this for initialization

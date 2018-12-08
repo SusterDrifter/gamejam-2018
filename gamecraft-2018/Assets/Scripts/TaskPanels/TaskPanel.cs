@@ -9,4 +9,5 @@ public abstract class TaskPanel : MonoBehaviour {
     public abstract void Start();
     public abstract void Display();
 
+    public PanelController panelController;
 }
