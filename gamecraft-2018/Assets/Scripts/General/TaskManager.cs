@@ -85,9 +85,13 @@ public class TaskManager : MonoBehaviour {
     
 	IEnumerator _TaskAddCoroutine(StageSO stage)
     {
+		
 		currentStage = stage;
 		float runningTime = 0;
 		int taskSpawnCount = 0;
+
+		AddTaskWithSO(getRandomTaskSO());
+        taskSpawnCount++;
 
 		while (true) {
 			runningTime += Time.deltaTime;
